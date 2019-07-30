@@ -46,10 +46,6 @@
         position: absolute;
         right: 0;
         z-index: 11;
-        padding: 0;
-        margin-top: -15px;
-        height: 30px;
-        width: 30px;
     }
     
     .navbar-collapse {
@@ -69,7 +65,14 @@
 }
 
 .navbar-toggler {
+    padding: 0;
+    margin-top: -15px;
     border: none;
+    
+    svg {
+        width: 30px;
+        height: 30px;
+    }
     
     line {
         stroke: $color_white;
