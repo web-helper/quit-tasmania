@@ -1,0 +1,114 @@
+/**
+ * Header
+ */
+.navbar {
+    //background-color: transparent !important;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    
+    .navbar-brand {
+        width: 130px;
+    }
+    
+    .quitline {
+        display: inline-block;
+        
+        .quitline-no {
+            width: 200px;
+        }
+    }
+    
+    .right-controls {
+        display: inline-block;
+        position: relative;
+        
+        .search-toggler {
+            display: block;
+            position: absolute;
+            right: 40px;
+            z-index: 11;
+            margin-top: -15px;
+            height: 30px;
+            width: 30px;
+        }
+        
+        .search-toggler .fa {
+            margin-top: 6px;
+            @include font-size(19px);
+            color: $color_white;
+        }
+    }
+}
+
+.navbar-expand-md {
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        right: 0;
+        z-index: 11;
+        padding: 0;
+        margin-top: -15px;
+        height: 30px;
+        width: 30px;
+    }
+    
+    .navbar-collapse {
+        display: none !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $color_primary;
+        z-index: 10;
+        
+        &.show {
+            display: block !important;
+        }
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    
+    line {
+        stroke: $color_white;
+        -webkit-transition: all 0.25s ease-in-out 0s;
+        -moz-transition: all 0.25s ease-in-out 0s;
+        -o-transition: all 0.25s ease-in-out 0s;
+        transition: all 0.25s ease-in-out 0s;
+    }
+    
+    &:not(.collapsed) line {
+        &.top {
+            -webkit-transform: rotate(45deg) translate3d(4px, -4px, 0);
+            -moz-transform: rotate(45deg) translate3d(4px, -4px, 0);
+            -ms-transform: rotate(45deg) translate3d(4px, -4px, 0);
+            -o-transform: rotate(45deg) translate3d(4px, -4px, 0);
+            transform: rotate(45deg) translate3d(4px, -4px, 0);
+        }
+        
+        &.mid {
+            opacity: 0;
+        }
+        
+        &.bot {
+            -webkit-transform: rotate(-45deg) translate3d(-12px, 0, 0);
+            -moz-transform: rotate(-45deg) translate3d(-12px, 0, 0);
+            -ms-transform: rotate(-45deg) translate3d(-12px, 0, 0);
+            -o-transform: rotate(-45deg) translate3d(-12px, 0, 0);
+            transform: rotate(-45deg) translate3d(-12px, 0, 0);
+        }
+    }
+}
+
+
+/**
+ * Main Content
+ */
+
+
+ /**
+ * Footer
+ */
+
