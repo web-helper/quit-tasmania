@@ -59,6 +59,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
                 
                 <div class="right-controls">
+                    <a class="craving-link" href="#">Craving a<br/>cigarette now?</a>
+                    
                     <a class="search-toggler" href="#search" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-search search-icon"></i></a>
                     
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">

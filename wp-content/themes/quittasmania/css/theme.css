@@ -8,6 +8,30 @@
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
+@font-face {
+  font-family: 'Akrobat';
+  src: url("../fonts/Akrobat-Light.eot");
+  src: url("../fonts/Akrobat-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Akrobat-Light.woff") format("woff"), url("../fonts/Akrobat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akrobat';
+  src: url("../fonts/Akrobat-Regular.eot");
+  src: url("../fonts/Akrobat-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Akrobat-Regular.woff") format("woff"), url("../fonts/Akrobat-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akrobat';
+  src: url("../fonts/Akrobat-SemiBold.eot");
+  src: url("../fonts/Akrobat-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Akrobat-SemiBold.woff") format("woff"), url("../fonts/Akrobat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akrobat';
+  src: url("../fonts/Akrobat-Bold.eot");
+  src: url("../fonts/Akrobat-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Akrobat-Bold.woff") format("woff"), url("../fonts/Akrobat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
 /**
  * Header
  */
@@ -22,11 +46,25 @@
       width: 200px; }
   .navbar .right-controls {
     display: inline-block;
-    position: relative; }
+    position: relative;
+    width: 235px; }
+    .navbar .right-controls .craving-link {
+      display: block;
+      position: absolute;
+      right: 85px;
+      width: 150px;
+      margin-top: -15px;
+      padding-left: 40px;
+      font-family: 'Akrobat', sans-serif;
+      font-weight: 600;
+      line-height: 1;
+      color: #ffffff;
+      background: url("../images/warning-icon.png") left center no-repeat;
+      background-size: 29px auto; }
     .navbar .right-controls .search-toggler {
       display: block;
       position: absolute;
-      right: 40px;
+      right: 45px;
       z-index: 11;
       margin-top: -15px;
       height: 30px;

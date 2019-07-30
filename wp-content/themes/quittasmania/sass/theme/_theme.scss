@@ -21,11 +21,27 @@
     .right-controls {
         display: inline-block;
         position: relative;
+        width: 235px;
+        
+        .craving-link {
+            display: block;
+            position: absolute;
+            right: 85px;
+            width: 150px;
+            margin-top: -15px;
+            padding-left: 40px;
+            font-family: 'Akrobat', sans-serif;
+            font-weight: 600;
+            line-height: 1;
+            color: $color_white;
+            background: url('../images/warning-icon.png') left center no-repeat;
+            background-size: 29px auto;
+        }
         
         .search-toggler {
             display: block;
             position: absolute;
-            right: 40px;
+            right: 45px;
             z-index: 11;
             margin-top: -15px;
             height: 30px;
@@ -109,7 +125,8 @@
 /**
  * Main Content
  */
-
+#page-wrapper {
+}
 
  /**
  * Footer
