@@ -36,6 +36,8 @@
  * Header
  */
 .navbar {
+  padding: 1.5rem 3rem;
+  background-color: transparent !important;
   -webkit-justify-content: space-between;
   justify-content: space-between; }
   .navbar .navbar-brand {
@@ -122,6 +124,13 @@
 /**
  * Main Content
  */
+#page-wrapper {
+  padding: 0; }
+
+#page-wrapper .container-fluid {
+  padding-left: 0;
+  padding-right: 0; }
+
 /**
 * Footer
 */

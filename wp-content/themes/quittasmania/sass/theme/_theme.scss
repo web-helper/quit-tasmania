@@ -2,7 +2,8 @@
  * Header
  */
 .navbar {
-    //background-color: transparent !important;
+    padding: 1.5rem 3rem;
+    background-color: transparent !important;
     -webkit-justify-content: space-between;
     justify-content: space-between;
     
@@ -126,6 +127,12 @@
  * Main Content
  */
 #page-wrapper {
+    padding: 0;
+}
+
+#page-wrapper .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
 }
 
  /**
