@@ -1,21 +1,41 @@
 /**
  * Header
  */
+
 .navbar {
-    padding: 1.5rem 3rem;
-    background-color: transparent !important;
+    padding: 0.5rem 2rem;
+    background-color: $color_white !important;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    -webkit-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    transition: all 0.25s ease-in-out 0s;
     
     .navbar-brand {
-        width: 130px;
+        width: 100px;
+        
+        .img-fluid {
+            -webkit-transition: all 0.25s ease-in-out 0s;
+            -moz-transition: all 0.25s ease-in-out 0s;
+            -o-transition: all 0.25s ease-in-out 0s;
+            transition: all 0.25s ease-in-out 0s;
+        }
+        
+        .img-fluid.white-version {
+            display: none;
+        }
     }
     
     .quitline {
         display: inline-block;
         
         .quitline-no {
-            width: 200px;
+            width: 230px;
+        }
+        
+        .quitline-no.white-version {
+            display: none;
         }
     }
     
@@ -29,55 +49,102 @@
             position: absolute;
             right: 85px;
             width: 150px;
-            margin-top: -15px;
-            padding-left: 40px;
-            font-family: 'Akrobat', sans-serif;
+            margin-top: -16px;
+            font-family: $font-family-secondary;
             font-weight: 600;
             line-height: 1;
-            color: $color_white;
+            color: $color_secondary;
+            
+        }
+        
+        .craving-link .warning-icon {
+            display: block;
+            float: left;
+            margin-top: 2px;
+            margin-right: 6px;
+            width: 34px;
+            height: 30px;
             background: url('../images/warning-icon.png') left center no-repeat;
             background-size: 29px auto;
+            
+            &.white-version {
+                display: none;
+                background-image: url('../images/warning-icon-white.png');
+            }
         }
+        
         
         .search-toggler {
             display: block;
             position: absolute;
             right: 45px;
-            z-index: 11;
+            z-index: 13;
             margin-top: -15px;
             height: 30px;
             width: 30px;
+            -webkit-transition: all 0.25s ease-in-out 0s;
+            -moz-transition: all 0.25s ease-in-out 0s;
+            -o-transition: all 0.25s ease-in-out 0s;
+            transition: all 0.25s ease-in-out 0s;
         }
         
         .search-toggler .fa {
             margin-top: 6px;
             @include font-size(19px);
-            color: $color_white;
+            color: $color_primary;
         }
     }
-}
-
-.navbar-expand-md {
-    .navbar-toggler {
-        display: block;
-        position: absolute;
-        right: 0;
-        z-index: 11;
+    
+    .right-controls.menu-active {
+        .search-toggler .fa {
+            color: $color_white;
+        }
+        
+        .navbar-toggler line {
+            stroke: $color_white;
+        }
     }
     
-    .navbar-collapse {
-        display: none !important;
-        position: fixed;
+    .right-controls.searchform-active {
+        .search-toggler {
+            right: 0;
+        }
+        
+        .search-toggler .fa {
+            @include font-size(24px);
+            color: $color_white;
+        }
+        
+        .navbar-toggler {
+            display: none;
+        }
+    }
+    
+    .search-form-collapse {
+        /*position: fixed;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: $color_primary;
-        z-index: 10;
+        flex-basis: 100%;
+        flex-grow: 1;
+        // For always expanded or extra full navbars, ensure content aligns itself
+        // properly vertically. Can be easily overridden with flex utilities.
+        align-items: center;
+        background-color: $color_primary;*/
+        z-index: 12 !important;
         
-        &.show {
-            display: block !important;
+        & > .search-form-inner {
+            display: flex;
+            height: 100%;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
         }
+    }
+    
+    .search-form-collapse:not(.show) {
+        display: none;
     }
 }
 
@@ -92,7 +159,7 @@
     }
     
     line {
-        stroke: $color_white;
+        stroke: $color_primary;
         -webkit-transition: all 0.25s ease-in-out 0s;
         -moz-transition: all 0.25s ease-in-out 0s;
         -o-transition: all 0.25s ease-in-out 0s;
@@ -118,6 +185,89 @@
             -ms-transform: rotate(-45deg) translate3d(-12px, 0, 0);
             -o-transform: rotate(-45deg) translate3d(-12px, 0, 0);
             transform: rotate(-45deg) translate3d(-12px, 0, 0);
+        }
+    }
+}
+
+.home .fixed-top:not(.sticky-header) {
+    .navbar {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background-color: transparent !important;
+    }
+    
+    .navbar .navbar-brand {
+        width: 150px;
+        
+        .img-fluid.white-version {
+            display: block;
+        }
+        
+        .img-fluid:not(.white-version) {
+            display: none;
+        }
+    }
+    
+    .navbar .quitline {
+        .quitline-no.white-version {
+            display: block;
+        }
+        
+        .quitline-no:not(.white-version) {
+            display: none;
+        }
+    }
+    
+    .navbar .right-controls {
+        .craving-link {
+            color: $color_white;
+        }
+        
+        .craving-link .warning-icon.white-version {
+            display: block;
+        }
+        
+        .craving-link .warning-icon:not(.white-version) {
+            display: none;
+        }
+        
+        .search-toggler .fa {
+            color: $color_white;
+        }
+        
+        .navbar-toggler line {
+            stroke: $color_white;
+        }
+    }
+}
+
+/*.sticky-header .navbar {
+    
+    .navbar-brand {
+        width: 90px;
+    }
+}*/
+
+.navbar-expand-md {
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        right: 0;
+        z-index: 11;
+    }
+    
+    .navbar-collapse {
+        display: none !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $color_primary;
+        z-index: 10;
+        
+        &.show {
+            display: block !important;
         }
     }
 }

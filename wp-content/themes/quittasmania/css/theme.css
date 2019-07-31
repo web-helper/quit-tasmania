@@ -36,16 +36,29 @@
  * Header
  */
 .navbar {
-  padding: 1.5rem 3rem;
-  background-color: transparent !important;
+  padding: 0.5rem 2rem;
+  background-color: #ffffff !important;
   -webkit-justify-content: space-between;
-  justify-content: space-between; }
+  justify-content: space-between;
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s; }
   .navbar .navbar-brand {
-    width: 130px; }
+    width: 100px; }
+    .navbar .navbar-brand .img-fluid {
+      -webkit-transition: all 0.25s ease-in-out 0s;
+      -moz-transition: all 0.25s ease-in-out 0s;
+      -o-transition: all 0.25s ease-in-out 0s;
+      transition: all 0.25s ease-in-out 0s; }
+    .navbar .navbar-brand .img-fluid.white-version {
+      display: none; }
   .navbar .quitline {
     display: inline-block; }
     .navbar .quitline .quitline-no {
-      width: 200px; }
+      width: 230px; }
+    .navbar .quitline .quitline-no.white-version {
+      display: none; }
   .navbar .right-controls {
     display: inline-block;
     position: relative;
@@ -55,43 +68,71 @@
       position: absolute;
       right: 85px;
       width: 150px;
-      margin-top: -15px;
-      padding-left: 40px;
-      font-family: 'Akrobat', sans-serif;
+      margin-top: -16px;
+      font-family: "Akrobat", sans-serif;
       font-weight: 600;
       line-height: 1;
-      color: #ffffff;
+      color: #ec1f30; }
+    .navbar .right-controls .craving-link .warning-icon {
+      display: block;
+      float: left;
+      margin-top: 2px;
+      margin-right: 6px;
+      width: 34px;
+      height: 30px;
       background: url("../images/warning-icon.png") left center no-repeat;
       background-size: 29px auto; }
+      .navbar .right-controls .craving-link .warning-icon.white-version {
+        display: none;
+        background-image: url("../images/warning-icon-white.png"); }
     .navbar .right-controls .search-toggler {
       display: block;
       position: absolute;
       right: 45px;
-      z-index: 11;
+      z-index: 13;
       margin-top: -15px;
       height: 30px;
-      width: 30px; }
+      width: 30px;
+      -webkit-transition: all 0.25s ease-in-out 0s;
+      -moz-transition: all 0.25s ease-in-out 0s;
+      -o-transition: all 0.25s ease-in-out 0s;
+      transition: all 0.25s ease-in-out 0s; }
     .navbar .right-controls .search-toggler .fa {
       margin-top: 6px;
       font-size: 1.1875rem;
-      color: #ffffff; }
-
-.navbar-expand-md .navbar-toggler {
-  display: block;
-  position: absolute;
-  right: 0;
-  z-index: 11; }
-.navbar-expand-md .navbar-collapse {
-  display: none !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #2e4986;
-  z-index: 10; }
-  .navbar-expand-md .navbar-collapse.show {
-    display: block !important; }
+      color: #2e4986; }
+  .navbar .right-controls.menu-active .search-toggler .fa {
+    color: #ffffff; }
+  .navbar .right-controls.menu-active .navbar-toggler line {
+    stroke: #ffffff; }
+  .navbar .right-controls.searchform-active .search-toggler {
+    right: 0; }
+  .navbar .right-controls.searchform-active .search-toggler .fa {
+    font-size: 1.5rem;
+    color: #ffffff; }
+  .navbar .right-controls.searchform-active .navbar-toggler {
+    display: none; }
+  .navbar .search-form-collapse {
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-basis: 100%;
+    flex-grow: 1;
+    // For always expanded or extra full navbars, ensure content aligns itself
+    // properly vertically. Can be easily overridden with flex utilities.
+    align-items: center;
+    background-color: $color_primary;*/
+    z-index: 12 !important; }
+    .navbar .search-form-collapse > .search-form-inner {
+      display: flex;
+      height: 100%;
+      align-content: center;
+      align-items: center;
+      justify-content: center; }
+  .navbar .search-form-collapse:not(.show) {
+    display: none; }
 
 .navbar-toggler {
   padding: 0;
@@ -101,7 +142,7 @@
     width: 30px;
     height: 30px; }
   .navbar-toggler line {
-    stroke: #ffffff;
+    stroke: #2e4986;
     -webkit-transition: all 0.25s ease-in-out 0s;
     -moz-transition: all 0.25s ease-in-out 0s;
     -o-transition: all 0.25s ease-in-out 0s;
@@ -120,6 +161,54 @@
     -ms-transform: rotate(-45deg) translate3d(-12px, 0, 0);
     -o-transform: rotate(-45deg) translate3d(-12px, 0, 0);
     transform: rotate(-45deg) translate3d(-12px, 0, 0); }
+
+.home .fixed-top:not(.sticky-header) .navbar {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: transparent !important; }
+.home .fixed-top:not(.sticky-header) .navbar .navbar-brand {
+  width: 150px; }
+  .home .fixed-top:not(.sticky-header) .navbar .navbar-brand .img-fluid.white-version {
+    display: block; }
+  .home .fixed-top:not(.sticky-header) .navbar .navbar-brand .img-fluid:not(.white-version) {
+    display: none; }
+.home .fixed-top:not(.sticky-header) .navbar .quitline .quitline-no.white-version {
+  display: block; }
+.home .fixed-top:not(.sticky-header) .navbar .quitline .quitline-no:not(.white-version) {
+  display: none; }
+.home .fixed-top:not(.sticky-header) .navbar .right-controls .craving-link {
+  color: #ffffff; }
+.home .fixed-top:not(.sticky-header) .navbar .right-controls .craving-link .warning-icon.white-version {
+  display: block; }
+.home .fixed-top:not(.sticky-header) .navbar .right-controls .craving-link .warning-icon:not(.white-version) {
+  display: none; }
+.home .fixed-top:not(.sticky-header) .navbar .right-controls .search-toggler .fa {
+  color: #ffffff; }
+.home .fixed-top:not(.sticky-header) .navbar .right-controls .navbar-toggler line {
+  stroke: #ffffff; }
+
+/*.sticky-header .navbar {
+    
+    .navbar-brand {
+        width: 90px;
+    }
+}*/
+.navbar-expand-md .navbar-toggler {
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 11; }
+.navbar-expand-md .navbar-collapse {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #2e4986;
+  z-index: 10; }
+  .navbar-expand-md .navbar-collapse.show {
+    display: block !important; }
 
 /**
  * Main Content

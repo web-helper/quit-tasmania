@@ -56,18 +56,26 @@ $container = get_theme_mod( 'understrap_container_type' );
                 
                 <div class="quitline">
                     <img class="quitline-no" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline.png' ) ); ?>" alt="Quitline" title="Quitline" />
+                    <img class="quitline-no white-version" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline-white.png' ) ); ?>" alt="Quitline" title="Quitline" />
                 </div>
                 
                 <div class="right-controls">
-                    <a class="craving-link" href="#">Craving a<br/>cigarette now?</a>
+                    <a class="craving-link" href="#"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
                     
-                    <a class="search-toggler" href="#search" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-search search-icon"></i></a>
+                    <a class="search-toggler" href="#search-form" data-toggle="collapse" data-target="#search-form" aria-controls="search-form" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle search form', 'quittasmania' ); ?>"><i class="fa fa-search search-icon"></i></a>
                     
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
                         <!--<span class="navbar-toggler-icon"></span>-->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.8275 19.6536"><title>icon-hamburger</title><line class="top" x1="1.4173" y1="1.4173" x2="27.4102" y2="1.4173" style="fill:none;stroke-width:2.83464574813843px"/><line class="mid" x1="1.4173" y1="9.8268" x2="27.4102" y2="9.8268" style="fill:none;stroke-width:2.83464574813843px"/><line class="bot" x1="1.4173" y1="18.2362" x2="27.4102" y2="18.2362" style="fill:none;stroke-width:2.83464574813843px"/></svg>
                     </button>
                 </div>
+                <!-- Search form goes here -->
+                <div id="search-form" class="search-form-collapse navbar-collapse">
+                    <div class="search-form-inner">
+                        <div>Search now</div>
+                    </div>
+                </div>
+                
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
