@@ -69,10 +69,11 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.8275 19.6536"><title>icon-hamburger</title><line class="top" x1="1.4173" y1="1.4173" x2="27.4102" y2="1.4173" style="fill:none;stroke-width:2.83464574813843px"/><line class="mid" x1="1.4173" y1="9.8268" x2="27.4102" y2="9.8268" style="fill:none;stroke-width:2.83464574813843px"/><line class="bot" x1="1.4173" y1="18.2362" x2="27.4102" y2="18.2362" style="fill:none;stroke-width:2.83464574813843px"/></svg>
                     </button>
                 </div>
+                
                 <!-- Search form goes here -->
                 <div id="search-form" class="search-form-collapse navbar-collapse">
                     <div class="search-form-inner">
-                        <div>Search now</div>
+                        <?php echo quittas_get_search_form(); ?>
                     </div>
                 </div>
                 
