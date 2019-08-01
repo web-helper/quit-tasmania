@@ -301,8 +301,35 @@ body {
 /**
  * Main Content
  */
+h1 {
+  font-size: 2.375rem;
+  font-family: "Akrobat", sans-serif;
+  font-weight: 500; }
+
+h2 {
+  font-size: 1.75rem;
+  font-family: "Akrobat", sans-serif;
+  font-weight: bold; }
+
+p {
+  font-family: "Raleway", sans-serif; }
+
+.blue {
+  color: #2e4986; }
+
+.red {
+  color: #ec1f30; }
+
+.bg-blue {
+  background-color: #2e4986; }
+
+.bg-red {
+  background-color: #ec1f30; }
+
 #page-wrapper {
-  padding: 0; }
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.7; }
 
 .section {
   margin-left: -15px;

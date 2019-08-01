@@ -72,4 +72,8 @@ jQuery(document).ready(function($){
           }
         }
     });
+    
+    window.sr = ScrollReveal();
+    sr.reveal('#quit-smoking-message .text', { duration: 1500, delay: 50, origin: 'top', distance: '50px', opacity: 0, scale: 1 });
+    sr.reveal('#quit-smoking-message .underline', { duration: 1000, delay: 80, origin: 'right', distance: '500px', opacity: 0, scale: 1 });
 });

@@ -18,6 +18,13 @@ add_action( 'wp_enqueue_scripts', 'quittas_enqueue_styles' );
 function quittas_enqueue_scripts() {
     wp_enqueue_script( 'quittas-scripts',
         get_stylesheet_directory_uri() . '/js/main.js',
+        array('scrollreveal-scripts'),
+        date('Ymd').rand(600, 900),
+        true 
+    );
+    
+    wp_enqueue_script( 'scrollreveal-scripts',
+        get_stylesheet_directory_uri() . '/js/vendor/scrollreveal.js',
         array('understrap-scripts'),
         date('Ymd').rand(600, 900),
         true 

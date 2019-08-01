@@ -402,8 +402,43 @@ body {
 /**
  * Main Content
  */
+
+h1 {
+    @include font-size(38px);
+    font-family: $font-family-secondary;
+    font-weight: 500;
+}
+
+h2 {
+    @include font-size(28px);
+    font-family: $font-family-secondary;
+    font-weight: bold;
+}
+
+p {
+    font-family: $font-family-primary;
+}
+
+.blue {
+    color: $color_primary;
+}
+
+.red {
+    color: $color_secondary;
+}
+
+.bg-blue {
+    background-color: $color_primary;
+}
+
+.bg-red {
+    background-color: $color_secondary;
+}
+
 #page-wrapper {
-    padding: 0 ;
+    padding: 0;
+    @include font-size(18px);
+    line-height: 1.7;
 }
 
 #page-wrapper .container-fluid {
