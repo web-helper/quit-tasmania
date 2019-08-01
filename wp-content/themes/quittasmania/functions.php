@@ -43,6 +43,7 @@ function quittas_get_search_form() {
 }
 
 function quittas_circle_arrow_svg() {
+    /*
     $svg = '<svg class="circle-arrow" width="21px" height="21px" viewBox="0 0 21 21">
     <g transform="translate(-84.000000, -1330.000000)" fill="none" fill-rule="evenodd">
         <g transform="translate(94.500000, 1340.388889) rotate(-180.000000) translate(-94.500000, -1340.388889) translate(84.000000, 1329.888889)">
@@ -74,14 +75,14 @@ function quittas_circle_arrow_svg() {
         </g>
     </g>
 </svg>';
+*/
     
-    /*
-    $svg = '<svg class="circle-arrow" width="21px" height="21px" viewBox="0 0 21 21">
-    <g transform="translate(0.222222, 0.309569)">
-        <path class="circle-arrow__arrow" d="M-1355.3,158.6h-8.3"/>
-        <polyline class="circle-arrow__arrow" points="-1358.1,162.6 -1354.8,158.6 -1358.1,154.6 	"/>
-        <circle class="circle-arrow__circle" cx="-1358.7" cy="158.7" r="9.5"/>
-    </g></svg>';*/
+    $svg = '<svg class="circle-arrow" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+      <g fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+        <circle class="circle-arrow__circle" cx="16" cy="16" r="15.12"></circle>
+        <path class="circle-arrow__arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+      </g>
+    </svg>';
     return $svg;
 }
 ?>

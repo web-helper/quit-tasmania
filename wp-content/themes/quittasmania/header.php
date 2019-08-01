@@ -59,6 +59,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <img class="quitline-no white-version" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline-white.png' ) ); ?>" alt="Quitline" title="Quitline" />
                 </div>
                 
+                <div class="craving-link-mobile">
+                    <a class="craving-link" href="#"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
+                </div>
+                
                 <div class="right-controls">
                     <a class="craving-link" href="#"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
                     
