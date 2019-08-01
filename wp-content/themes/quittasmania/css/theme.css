@@ -333,7 +333,8 @@ p {
 
 .section {
   margin-left: -15px;
-  margin-right: -15px; }
+  margin-right: -15px;
+  overflow: hidden; }
 
 .container {
   padding: 0 1.875rem; }
