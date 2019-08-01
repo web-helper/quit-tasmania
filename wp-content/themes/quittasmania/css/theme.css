@@ -38,9 +38,17 @@
 body {
   font-size: 0.875rem; }
 
+#wrapper-navbar {
+  background-color: #ffffff;
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s; }
+
 .navbar {
-  padding: 0.5rem 0.9375;
-  background-color: #ffffff !important;
+  padding: 0.5rem 0.9375rem;
+  margin: 0 auto;
+  background-color: transparent !important;
   -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-transition: all 0.25s ease-in-out 0s;
@@ -241,30 +249,31 @@ body {
   #searchform .input-group .search-submit:hover .circle-arrow .circle-arrow__circle {
     stroke-dashoffset: 0; }
 
-.home .fixed-top:not(.sticky-header) .navbar {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.home .fixed-top:not(.sticky-header) {
   background-color: transparent !important; }
-.home .fixed-top:not(.sticky-header) .navbar .navbar-brand {
-  width: 80px; }
-  .home .fixed-top:not(.sticky-header) .navbar .navbar-brand .img-fluid.white-version {
+  .home .fixed-top:not(.sticky-header) .navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .home .fixed-top:not(.sticky-header) .navbar .navbar-brand {
+    width: 80px; }
+    .home .fixed-top:not(.sticky-header) .navbar .navbar-brand .img-fluid.white-version {
+      display: block; }
+    .home .fixed-top:not(.sticky-header) .navbar .navbar-brand .img-fluid:not(.white-version) {
+      display: none; }
+  .home .fixed-top:not(.sticky-header) .navbar .quitline .quitline-no.white-version {
     display: block; }
-  .home .fixed-top:not(.sticky-header) .navbar .navbar-brand .img-fluid:not(.white-version) {
+  .home .fixed-top:not(.sticky-header) .navbar .quitline .quitline-no:not(.white-version) {
     display: none; }
-.home .fixed-top:not(.sticky-header) .navbar .quitline .quitline-no.white-version {
-  display: block; }
-.home .fixed-top:not(.sticky-header) .navbar .quitline .quitline-no:not(.white-version) {
-  display: none; }
-.home .fixed-top:not(.sticky-header) .navbar .craving-link {
-  color: #ffffff; }
-  .home .fixed-top:not(.sticky-header) .navbar .craving-link .warning-icon.white-version {
-    display: block; }
-  .home .fixed-top:not(.sticky-header) .navbar .craving-link .warning-icon:not(.white-version) {
-    display: none; }
-.home .fixed-top:not(.sticky-header) .navbar .right-controls .search-toggler .fa {
-  color: #ffffff; }
-.home .fixed-top:not(.sticky-header) .navbar .right-controls .navbar-toggler line {
-  stroke: #ffffff; }
+  .home .fixed-top:not(.sticky-header) .navbar .craving-link {
+    color: #ffffff; }
+    .home .fixed-top:not(.sticky-header) .navbar .craving-link .warning-icon.white-version {
+      display: block; }
+    .home .fixed-top:not(.sticky-header) .navbar .craving-link .warning-icon:not(.white-version) {
+      display: none; }
+  .home .fixed-top:not(.sticky-header) .navbar .right-controls .search-toggler .fa {
+    color: #ffffff; }
+  .home .fixed-top:not(.sticky-header) .navbar .right-controls .navbar-toggler line {
+    stroke: #ffffff; }
 
 /*.sticky-header .navbar {
     
@@ -295,19 +304,31 @@ body {
 #page-wrapper {
   padding: 0; }
 
-.fullwidth {
+.section {
   margin-left: -15px;
   margin-right: -15px; }
+
+.container {
+  padding: 0 1.875rem; }
 
 /**
 * Footer
 */
+@media (min-width: 576px) {
+  .navbar {
+    max-width: 540px;
+    padding-left: 0;
+    padding-right: 0; }
+
+  .container {
+    padding: 0 0.9375rem; } }
 @media (min-width: 768px) {
   body {
     font-size: 1rem; }
 
   .navbar {
-    padding: 0.5rem 2rem; }
+    padding: 0.5rem 0;
+    max-width: 720px; }
     .navbar .navbar-brand {
       width: 100px;
       margin-right: 1rem; }
@@ -335,5 +356,17 @@ body {
 
   #searchform .input-group .field:focus {
     width: 600px; } }
+@media (min-width: 992px) {
+  .navbar {
+    max-width: 960px; } }
+@media (min-width: 1200px) {
+  .navbar {
+    max-width: 1140px; } }
+@media (min-width: 1350px) {
+  .navbar {
+    max-width: 1290px; }
+
+  .container {
+    max-width: 1290px; } }
 
 /*# sourceMappingURL=theme.css.map */

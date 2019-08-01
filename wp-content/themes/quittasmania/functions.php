@@ -8,6 +8,10 @@ function quittas_enqueue_styles() {
         array( $parent_style ),
         date('Ymd').rand(600, 900)
     );
+    //Add Custom CSS to document head (ACF-driven setting)
+    if ( get_field('page_style') ) {
+        wp_add_inline_style( 'quittas-style', wp_strip_all_tags( get_field('page_style') ) );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'quittas_enqueue_styles' );
 
@@ -43,46 +47,40 @@ function quittas_get_search_form() {
 }
 
 function quittas_circle_arrow_svg() {
-    /*
-    $svg = '<svg class="circle-arrow" width="21px" height="21px" viewBox="0 0 21 21">
-    <g transform="translate(-84.000000, -1330.000000)" fill="none" fill-rule="evenodd">
-        <g transform="translate(94.500000, 1340.388889) rotate(-180.000000) translate(-94.500000, -1340.388889) translate(84.000000, 1329.888889)">
-            <g transform="translate(0.222222, 0.309569)">
-                <path
-                    class="circle-arrow__arrow"
-                    stroke-width="1"
-                    d="M11.0237641,6 L11.0237641,14.2697504"
-                    transform="translate(11.023764, 10.134875) rotate(-90.000000) translate(-11.023764, -10.134875)"
-                ></path>
-                <polyline
-                    class="circle-arrow__arrow"
-                    stroke-width="1"
-                    transform="translate(8.000000, 10.134875) rotate(-270.000000) translate(-8.000000, -10.134875)"
-                    points="4 8.46820854 8.01885258 11.8015419 12 8.4994821"
-                ></polyline>
-                <circle
-                    class="circle-arrow__circle"
-                    stroke-width="1"
-                    stroke-dasharray="1000"
-                    stroke-dashoffset="1000"
-                    fill="none"
-                    transform="translate(10.277778, 10.079320) rotate(180.000000) translate(-10.277778, -10.079320)"
-                    cx="10.2777778"
-                    cy="10.0793196"
-                    r="9.5"
-                ></circle>
-            </g>
-        </g>
-    </g>
-</svg>';
-*/
-    
     $svg = '<svg class="circle-arrow" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <g fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
         <circle class="circle-arrow__circle" cx="16" cy="16" r="15.12"></circle>
         <path class="circle-arrow__arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
       </g>
     </svg>';
+    
     return $svg;
 }
+
+function init_acf() {
+    // check function exists
+    if( function_exists('acf_register_block') ) {
+        // register a testimonial block
+        acf_register_block(array(
+            'name'				=> 'raw-section',
+            'title'				=> __('Raw Section'),
+            'description'		=> __('Allows editor to type HTML codes.'),
+            'render_callback'	=> 'acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'section' ),
+        ));
+    }
+}
+add_action('acf/init', 'init_acf');
+
+function acf_block_renderer( $block ) {
+    $slug = str_replace('acf/', '', $block['name']);
+
+    // include a template part from within the "blocks" folder
+    if( file_exists( get_theme_file_path("/blocks/content-{$slug}.php") ) ) {
+        include( get_theme_file_path("/blocks/content-{$slug}.php") );
+    }
+}
+
 ?>
