@@ -8,6 +8,7 @@ function quittas_enqueue_styles() {
         array( $parent_style ),
         date('Ymd').rand(600, 900)
     );
+    
     //Add Custom CSS to document head (ACF-driven setting)
     if ( get_field('page_style') ) {
         wp_add_inline_style( 'quittas-style', wp_strip_all_tags( get_field('page_style') ) );
@@ -29,6 +30,11 @@ function quittas_enqueue_scripts() {
         date('Ymd').rand(600, 900),
         true 
     );
+    
+    //Add Custom Javascript to document head (ACF-driven setting)
+    if ( get_field('page_script') ) {
+        wp_add_inline_script( 'quittas-scripts', get_field('page_script') );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'quittas_enqueue_scripts' );
 
@@ -63,6 +69,11 @@ function quittas_circle_arrow_svg() {
     
     return $svg;
 }
+
+function quittas_circle_arrow_shortcode( $atts ) {
+	echo quittas_circle_arrow_svg();
+}
+add_shortcode( 'circle_arrow', 'quittas_circle_arrow_shortcode' );
 
 function init_acf() {
     // check function exists
