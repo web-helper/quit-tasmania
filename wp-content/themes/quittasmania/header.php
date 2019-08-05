@@ -82,19 +82,136 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                 </div>
                 
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav ml-auto',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
+                <div id="navbarNavDropdown" class="collapse navbar-collapse">
+                    <div class="navbar-image float-md-left"><img src="<?php echo home_url('/wp-content/themes/quittasmania/images/take-time-to-think-text.png'); ?>" alt="Take the time to think about why you smoke" /></div>
+                    
+                    <div class="navbar-menus float-md-left">
+                        <div class="navbar-menus-inner">
+                            <div class="navbar-menus-wrapper">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col col-12 col-md-6">
+                                            <h3><?php echo quittas_get_menu_name_by_location('primary'); ?></h3>
+                                            <!-- The Main Menu goes here -->
+                                            <?php wp_nav_menu(
+                                                array(
+                                                    'theme_location'  => 'primary',
+                                                    'container'       => 'none',
+                                                    'container_class' => '',
+                                                    'container_id'    => '',
+                                                    'menu_class'      => 'quittas-menu',
+                                                    'fallback_cb'     => '',
+                                                    'menu_id'         => 'main-menu',
+                                                    'depth'           => 0
+                                                )
+                                            ); ?>
+                                            
+                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu1'); ?></h3>
+                                            <?php wp_nav_menu(
+                                                array(
+                                                    'theme_location'  => 'extra-menu1',
+                                                    'container'       => 'none',
+                                                    'container_class' => '',
+                                                    'container_id'    => '',
+                                                    'menu_class'      => 'quittas-menu',
+                                                    'fallback_cb'     => '',
+                                                    'menu_id'         => 'extra-menu1',
+                                                    'depth'           => 0
+                                                )
+                                            ); ?>
+                                            
+                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu2'); ?></h3>
+                                            <?php wp_nav_menu(
+                                                array(
+                                                    'theme_location'  => 'extra-menu2',
+                                                    'container'       => 'none',
+                                                    'container_class' => '',
+                                                    'container_id'    => '',
+                                                    'menu_class'      => 'quittas-menu',
+                                                    'fallback_cb'     => '',
+                                                    'menu_id'         => 'extra-menu2',
+                                                    'depth'           => 0
+                                                )
+                                            ); ?>
+                                        </div>
+                                        <div class="col col-12 col-md-6">
+                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu3'); ?></h3>
+                                            <?php wp_nav_menu(
+                                                array(
+                                                    'theme_location'  => 'extra-menu3',
+                                                    'container'       => 'none',
+                                                    'container_class' => '',
+                                                    'container_id'    => '',
+                                                    'menu_class'      => 'quittas-menu',
+                                                    'fallback_cb'     => '',
+                                                    'menu_id'         => 'extra-menu3',
+                                                    'depth'           => 0
+                                                )
+                                            ); ?>
+                                            
+                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu4'); ?></h3>
+                                            <?php wp_nav_menu(
+                                                array(
+                                                    'theme_location'  => 'extra-menu4',
+                                                    'container'       => 'none',
+                                                    'container_class' => '',
+                                                    'container_id'    => '',
+                                                    'menu_class'      => 'quittas-menu',
+                                                    'fallback_cb'     => '',
+                                                    'menu_id'         => 'extra-menu4',
+                                                    'depth'           => 0
+                                                )
+                                            ); ?>
+                                            
+                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu5'); ?></h3>
+                                            <?php wp_nav_menu(
+                                                array(
+                                                    'theme_location'  => 'extra-menu5',
+                                                    'container'       => 'none',
+                                                    'container_class' => '',
+                                                    'container_id'    => '',
+                                                    'menu_class'      => 'quittas-menu',
+                                                    'fallback_cb'     => '',
+                                                    'menu_id'         => 'extra-menu5',
+                                                    'depth'           => 0
+                                                )
+                                            ); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quitline container">
+                                    <div class="row">
+                                        <div class="col col-12">
+                                            <div class="quitline-no-wrapper"><a href="#" title="Quitline" class="quitline-no"><img src="<?php echo home_url('/wp-content/themes/quittasmania/images/quitline-white.png'); ?>" alt="Quitline" /></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="downloadables container">
+                                    <div class="row">
+                                        <div class="col col-12 col-md-6">
+                                            <div class="downloadable">
+                                                Quit Now: My Quit Buddy
+                                                <ul>
+                                                    <li><a href="#" class="download-button"><img src="<?php echo home_url('wp-content/themes/quittasmania/images/app-store-button.png'); ?>" alt="App Store Download" /></a></li>
+                                                    <li><a href="#" class="download-button"><img src="<?php echo home_url('wp-content/themes/quittasmania/images/google-play-button.png'); ?>" alt="Google Play Download" /></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col col-12 col-md-6">
+                                            <div class="downloadable">
+                                                Quit for You - Quit for Two
+                                                <ul>
+                                                    <li><a href="#" class="download-button"><img src="<?php echo home_url('wp-content/themes/quittasmania/images/app-store-button.png'); ?>" alt="App Store Download" /></a></li>
+                                                    <li><a href="#" class="download-button"><img src="<?php echo home_url('wp-content/themes/quittasmania/images/google-play-button.png'); ?>" alt="Google Play Download" /></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>

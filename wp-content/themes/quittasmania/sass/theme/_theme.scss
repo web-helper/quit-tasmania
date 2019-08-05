@@ -395,6 +395,119 @@ body {
         &.show {
             display: block !important;
         }
+        
+        .navbar-image {
+            display: none;
+        }
+        
+        .navbar-menus {
+            height: 100%;
+        }
+        
+        .navbar-menus .navbar-menus-inner {
+            height: calc(100% - 80px);
+            margin: 60px 20px 0 20px;
+            overflow-y: auto;
+        }
+        
+        .navbar-menus .navbar-menus-inner .navbar-menus-wrapper {
+            margin: 10px;
+        }
+        
+        .navbar-menus h3 {
+            position: relative;
+            padding-bottom: 6px;
+            @include font-size(24px);
+            font-family: $font-family-secondary;
+            color: $color-white;
+        }
+        
+        .navbar-menus h3::after {
+            position: absolute;
+            left: 0; 
+            bottom: 0;
+            content: '';
+            height: 2px;
+            width: 150px;
+            background-color: $color-white;
+        }
+        
+        .navbar-menus .quittas-menu {
+            padding: 0;
+            margin: 0 0 30px 0;
+            list-style: none;
+        }
+        
+        .navbar-menus .quittas-menu > li {
+            margin-bottom: 4px;
+        }
+        
+        .navbar-menus .quittas-menu > li > a {
+            display: block;
+            @include font-size(16px);
+            font-weight: 500;
+            color: $color-white;
+        }
+        
+        .navbar-menus .quittas-menu > li > a:hover {
+            text-decoration: underline;
+        }
+        
+        .navbar-menus .quitline {
+            display: block !important;
+            margin-top: 20px;
+        }
+        
+        .navbar-menus .quitline .quitline-no-wrapper {
+            text-align: center;
+        }
+        
+        .navbar-menus .quitline-no {
+            display: block !important;
+            margin: 0 auto;
+            width: 200px;
+        }
+        
+        .navbar-menus .quitline-no > img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        .navbar-menus .downloadables {
+            margin-top: 20px;
+        }
+        
+        .navbar-menus .downloadables .downloadable {
+            @include font-size(13px);
+            font-family: $font-family-primary;
+            font-weight: 700;
+            color: $color-white;
+            text-align: center;
+        }
+        
+        .navbar-menus .downloadable:first-child {
+            margin-bottom: 20px;
+        }
+        
+        .navbar-menus .downloadable > ul {
+            display: block;
+            padding: 0;
+            margin: 3px 0 0;
+            list-style: none;
+        }
+        
+        .navbar-menus .downloadable > ul > li {
+            height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .navbar-menus .downloadable > ul > li img {
+            display: block;
+            height: 100%;
+            width: auto;
+        }
     }
 }
 
@@ -480,22 +593,148 @@ a:hover {
  */
 #wrapper-footer {
     padding-top: 60px;
+    padding-bottom: 0;
 }
 
-.footer-container.container {
-    padding: 20px 0;
-    border-top: 2px solid $color_black;
-    font-family: $font-family-primary;
-    font-weight: 300;
-    @include font-size(15px);
-    line-height: 1.25;
-}
+.footer-container {
+    &.container {
+        padding: 20px 0;
+        border-top: 2px solid $color_black;
+        font-family: $font-family-primary;
+        font-weight: 300;
+        @include font-size(15px);
+        line-height: 1.25;
+    }
 
-.footer-container a {
-    color: inherit;
-    font-family: $font-family-primary;
-    font-weight: 300;
-    text-decoration: underline;
+    a {
+        color: inherit;
+        font-family: $font-family-primary;
+        font-weight: 300;
+        text-decoration: underline;
+    }
+    
+    .site-footer {
+        margin-top: 20px;
+    }
+    
+    .site-info {
+        text-align: center;
+    }
+    
+    .downloadable {
+        text-align: center;
+        font-weight: bold;
+        
+        ul {
+            display: block;
+            list-style: none;
+            margin: 5px 0 0;
+            padding: 0;
+        }
+        
+        ul > li {
+            height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        ul > li img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    
+    .downloadable:first-child {
+        margin-bottom: 20px;
+    }
+    
+    .social-buttons {
+        overflow: hidden;
+        margin-top: 20px;
+        text-align: center;
+        
+        > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        > ul > li {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .social-button {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        > ul > li.facebook-button {
+            width: 30px;
+        }
+        
+        > ul > li.youtube-button {
+            width: 55px;
+            margin-left: 10px;
+        }
+    }
+    
+    .bottom-info {
+        margin-top: 10px;
+        
+        .sponsors {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .sponsors > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sponsors > ul > li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+        
+        .sponsors .sponsor {
+            display: block;
+            //width: 100%;
+            //height: auto;
+        }
+        
+        .site-info {
+            margin-top: 20px;
+        }
+        
+        .site-info > .footer-links {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .site-info > .footer-links > li {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .site-info > .footer-links > li::before {
+            content: '|';
+        }
+        
+        .site-info > .footer-links > li > a {
+            padding: 0 2px 0 5px;
+            text-decoration: none;
+        }
+        
+        .site-info > .footer-links > li > a:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 
@@ -569,6 +808,86 @@ a:hover {
         .input-group {
             .field:focus {
                 width: 600px;
+            }
+        }
+    }
+    
+    .navbar-expand-md {
+        .navbar-collapse {
+            .navbar-image {
+                display: block;
+                width: 50%;
+                height: 100%;
+                background-image: url('../images/menu-image.jpg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+            }
+            
+            .navbar-image > img {
+                display: block;
+                max-width: 350px;
+                margin: 30px auto 0; 
+            }
+            
+            .navbar-menus {
+                width: 50%;
+            }
+            
+            .navbar-menus .navbar-menus-inner {
+                height: calc(100% - 100px);
+                margin: 60px 40px 0 40px;
+            }
+            
+            .navbar-menus .quittas-menu > li {
+                margin-bottom: 0;
+            }
+            
+            .navbar-menus .quitline {
+                margin-top: 50px;
+            }
+            
+            .navbar-menus .downloadables {
+                margin-top: 30px;
+            }
+            
+            .navbar-menus .downloadable:first-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    #wrapper-footer {
+        padding-bottom: 20px;
+    }
+    
+    .footer-container {
+        .site-footer {
+            margin-top: 0;
+        }
+        .site-info {
+            text-align: left;
+        }
+        
+        .downloadable {
+            text-align: right;
+        }
+        
+        .social-buttons {
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .bottom-info {
+            .sponsors {
+                width: 45%;
+                margin-top: -35px;
+            }
+            
+            .site-info {
+                width: 55%;
+                margin-top: 0;
             }
         }
     }

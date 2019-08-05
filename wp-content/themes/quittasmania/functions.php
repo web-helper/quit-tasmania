@@ -38,6 +38,33 @@ function quittas_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'quittas_enqueue_scripts' );
 
+function quittas_menu_setup() {
+    register_nav_menus( array(
+        'footer-links' => __( 'Footer Links', 'quittasmania' ),
+    ) );
+    
+    register_nav_menus( array(
+        'extra-menu1' => __( 'Extra Menu 1', 'quittasmania' ),
+    ) );
+    
+    register_nav_menus( array(
+        'extra-menu2' => __( 'Extra Menu 2', 'quittasmania' ),
+    ) );
+    
+    register_nav_menus( array(
+        'extra-menu3' => __( 'Extra Menu 3', 'quittasmania' ),
+    ) );
+    
+    register_nav_menus( array(
+        'extra-menu4' => __( 'Extra Menu 4', 'quittasmania' ),
+    ) );
+    
+    register_nav_menus( array(
+        'extra-menu5' => __( 'Extra Menu 5', 'quittasmania' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'quittas_menu_setup' );
+
 function quittas_change_logo( $html ) {
     preg_match ( '/(<a[^>]*>)(.*?)(<\/a>)/i' , $html, $matches );
     
@@ -83,7 +110,7 @@ function init_acf() {
             'name'				=> 'raw-section',
             'title'				=> __('Raw Section'),
             'description'		=> __('Allows editor to type HTML codes.'),
-            'render_callback'	=> 'acf_block_renderer',
+            'render_callback'	=> 'quittas_acf_block_renderer',
             'category'			=> 'layout',
             'icon'				=> 'admin-comments',
             'keywords'			=> array( 'section' ),
@@ -92,13 +119,30 @@ function init_acf() {
 }
 add_action('acf/init', 'init_acf');
 
-function acf_block_renderer( $block ) {
+function quittas_acf_block_renderer( $block ) {
     $slug = str_replace('acf/', '', $block['name']);
 
     // include a template part from within the "blocks" folder
     if( file_exists( get_theme_file_path("/blocks/content-{$slug}.php") ) ) {
         include( get_theme_file_path("/blocks/content-{$slug}.php") );
     }
+}
+
+function quittas_get_menu_by_location( $location ) {
+    if( empty($location) ) return false;
+
+    $locations = get_nav_menu_locations();
+    if( ! isset( $locations[$location] ) ) return false;
+
+    $menu_obj = get_term( $locations[$location], 'nav_menu' );
+
+    return $menu_obj;
+}
+
+function quittas_get_menu_name_by_location( $location ) {
+    $menu_obj = quittas_get_menu_by_location( $location );
+    
+    return $menu_obj->name;
 }
 
 ?>
