@@ -304,7 +304,8 @@ body {
   .navbar-expand-md .navbar-collapse .navbar-menus .navbar-menus-inner {
     height: calc(100% - 80px);
     margin: 60px 20px 0 20px;
-    overflow-y: auto; }
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; }
   .navbar-expand-md .navbar-collapse .navbar-menus .navbar-menus-inner .navbar-menus-wrapper {
     margin: 10px; }
   .navbar-expand-md .navbar-collapse .navbar-menus h3 {
