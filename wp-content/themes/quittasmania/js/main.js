@@ -10,19 +10,28 @@ jQuery(document).ready(function($){
     });
     
     $('#navbarNavDropdown').on('shown.bs.collapse', function() {
-        $('.right-controls').addClass('menu-active');
+        $('.navbar .right-controls').addClass('menu-active');
+        $('.navbar').addClass('collapse-active');
+        var timeout = setTimeout(function() {
+            $('#navbarNavDropdown .navbar-image .navbar-image-wrapper').addClass('animate');
+        }, 100);
+        
     }).on('hide.bs.collapse', function() {
-        $('.right-controls').removeClass('menu-active')
+        $('.navbar .right-controls').removeClass('menu-active');
+        $('.navbar').removeClass('collapse-active');
+        $(this).find('.navbar-image .navbar-image-wrapper').removeClass('animate');
     });
     
     $('#search-form').on('shown.bs.collapse', function() {
-        $('.right-controls').addClass('searchform-active');
-        $('.search-toggler').find('.fa').removeClass('fa-search');
-        $('.search-toggler').find('.fa').addClass('fa-times');
+        $('.navbar .right-controls').addClass('searchform-active');
+        $('.navbar .search-toggler').find('.fa').removeClass('fa-search');
+        $('.navbar .search-toggler').find('.fa').addClass('fa-times');
+        $('.navbar').addClass('collapse-active');
     }).on('hide.bs.collapse', function() {
-        $('.right-controls').removeClass('searchform-active')
-        $('.search-toggler').find('.fa').removeClass('fa-times');
-        $('.search-toggler').find('.fa').addClass('fa-search');
+        $('.navbar .right-controls').removeClass('searchform-active')
+        $('.navbar .search-toggler').find('.fa').removeClass('fa-times');
+        $('.navbar .search-toggler').find('.fa').addClass('fa-search');
+        $('.navbar').removeClass('collapse-active');
     });
     
     $('.screenheight').each(function() {

@@ -26,6 +26,10 @@ body {
     -o-transition: all 0.25s ease-in-out 0s;
     transition: all 0.25s ease-in-out 0s;
     
+    &.collapse-active {
+        padding: 0.5rem 0.9375rem 0 !important;
+    }
+    
     .navbar-brand {
         width: 80px;
         margin-right: 0;
@@ -129,9 +133,14 @@ body {
             color: $color_white;
         }
         
+        .navbar-toggler .hamburger-button > span {
+            background-color: $color_white;
+        }
+        
+        /*
         .navbar-toggler line {
             stroke: $color_white;
-        }
+        }*/
     }
     
     .right-controls.searchform-active {
@@ -182,7 +191,52 @@ body {
     margin-top: -15px;
     border: none;
     
-    svg {
+    .hamburger-button {
+        display: block;
+        position: relative;
+        margin-top: 6px;
+        width: 28px;
+        height: 19px;
+        
+        > span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: $color_primary;
+            /*-webkit-transition: .4s;
+            -moz-transition: .4s;
+            -o-transition: .4s;
+            transition: .4s;*/
+        }
+        
+        > span:nth-child(1) {
+            top: 0;
+        }
+        
+        > span:nth-child(2) {
+            top: calc(100% - 11px); //half of button height plus height of line (span)
+            
+            /*-webkit-transition: 0s .4s;
+            -moz-transition: 0s .4s;
+            -o-transition: 0s .4s;
+            transition: 0s .4s;*/
+        }
+        
+        > span:nth-child(3) {
+            top: calc(100% - 3px);
+        }
+        
+        > span:nth-child(1),
+        > span:nth-child(3) {
+            -webkit-transition: transform .2s, top .2s .2s;
+            -moz-transition: transform .2s, top .2s .2s;
+            -o-transition: transform .2s, top .2s .2s;
+            transition: transform .2s, top .2s .2s;
+        }
+    }
+    
+    /*svg {
         width: 30px;
         height: 30px;
     }
@@ -193,10 +247,61 @@ body {
         -moz-transition: all 0.25s ease-in-out 0s;
         -o-transition: all 0.25s ease-in-out 0s;
         transition: all 0.25s ease-in-out 0s;
+    }*/
+    
+    &:not(.collapsed) {
+        .hamburger-button {
+            height: 25px;
+            margin-top: 3px;
+            
+            > span:nth-child(1) {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            
+            > span:nth-child(2) {
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+                -ms-transform: scale(0);
+                -o-transform: scale(0);
+                transform: scale(0);
+                
+                -webkit-transition: 0s .2s;
+                -moz-transition: 0s .2s;
+                -o-transition: 0s .2s;
+                transition: 0s .2s;
+            }
+            
+            > span:nth-child(3) {
+                -webkit-transition: rotate(-45deg);
+                -moz-transition: rotate(-45deg);
+                -o-transition: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+            
+            > span:nth-child(1),
+            > span:nth-child(3) {
+                top: calc(100% - 13px);
+                -webkit-transition: top .2s, transform .2s .2s;
+                -moz-transition: top .2s, transform .2s .2s;
+                -o-transition: top .2s, transform .2s .2s;
+                transition: top .2s, transform .2s .2s;
+            }
+        }
     }
     
+    /*
     &:not(.collapsed) line {
         &.top {
+             -webkit-transform: translateY(7px);
+            -moz-transform: translateY(7px);
+            -ms-transform: translateY(7px);
+            -o-transform: translateY(7px);
+            transform: translateY(7px);
+            
             -webkit-transform: rotate(45deg) translate3d(4px, -4px, 0);
             -moz-transform: rotate(45deg) translate3d(4px, -4px, 0);
             -ms-transform: rotate(45deg) translate3d(4px, -4px, 0);
@@ -215,7 +320,7 @@ body {
             -o-transform: rotate(-45deg) translate3d(-12px, 0, 0);
             transform: rotate(-45deg) translate3d(-12px, 0, 0);
         }
-    }
+    }*/
 }
 
 #searchform {
@@ -248,6 +353,11 @@ body {
             -moz-transition: all 0.25s ease-in-out 0s;
             -o-transition: all 0.25s ease-in-out 0s;
             transition: all 0.25s ease-in-out 0s;
+            
+            -webkit-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -o-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
         }
         
@@ -361,9 +471,15 @@ body {
             color: $color_white;
         }
         
+        .navbar-toggler .hamburger-button > span {
+            background-color: $color_white;
+        }
+        
+        /*
         .navbar-toggler line {
             stroke: $color_white;
         }
+        */
     }
 }
 
@@ -444,15 +560,49 @@ body {
         }
         
         .navbar-menus .quittas-menu > li > a {
+            position: relative;
             display: block;
             @include font-size(16px);
             font-weight: 500;
             color: $color-white;
         }
         
-        .navbar-menus .quittas-menu > li > a:hover {
-            text-decoration: underline;
+        .navbar-menus .quittas-menu > li > a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: $color-white;
+            visibility: hidden;
+            
+            -webkit-transform: scaleX(0);
+            -moz-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+            -o-transform: scaleX(0);
+            transform: scaleX(0);
+            
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            
+            transform-origin: top left;
         }
+        
+        .navbar-menus .quittas-menu > li > a:hover::before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            -moz-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+            -o-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        
+        /*.navbar-menus .quittas-menu > li > a:hover {
+            text-decoration: underline;
+        }*/
         
         .navbar-menus .quitline {
             display: block !important;
@@ -758,10 +908,19 @@ a:hover {
     body {
         @include font-size(16px);
     }
+    
     .navbar {
         //padding: 0.5rem 2rem;
         padding: 0.5rem 0;
         max-width: 720px;
+        
+        &.collapse-active {
+            padding: 0.5rem 0 !important;
+            
+            .navbar-brand {
+                width: 100px !important;
+            }
+        }
         
         .navbar-brand {
             width: 100px;
@@ -817,19 +976,56 @@ a:hover {
         .navbar-collapse {
             .navbar-image {
                 display: block;
+                //position: relative;
                 width: 50%;
+                height: 100%;
+                overflow: hidden;
+                //background-image: url('../images/menu-image.jpg');
+                //background-position: center center;
+                //background-repeat: no-repeat;
+                //background-size: cover;
+                text-align: center;
+            }
+            
+            .navbar-image .navbar-image-wrapper {
+                overflow: hidden;
+                width: 100%;
                 height: 100%;
                 background-image: url('../images/menu-image.jpg');
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                text-align: center;
+                
+                -webkit-transition: all 1s;
+                -moz-transition: all 1s;
+                -o-transition: all 1s;
+                transition: all 1s;
+                
+                -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                -moz-transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                -ms-transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                -o-transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                transform: translate3d(0px, 0px, 0px) scale3d(1.3, 1.3, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                
+                transform-style: preserve-3d;
             }
             
-            .navbar-image > img {
+            .navbar-image .navbar-image-wrapper.animate {
+                -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                -moz-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                -ms-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                -o-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+                transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+            }
+            
+            .navbar-image .navbar-image-wrapper > img {
                 display: block;
                 max-width: 350px;
-                margin: 30px auto 0; 
+                margin: 30px auto 0;
+                //position: absolute;
+                //top: 30px;
+                //left: 50%;
+                //transform: translate(-50%, 0);
             }
             
             .navbar-menus {
@@ -843,6 +1039,10 @@ a:hover {
             
             .navbar-menus .quittas-menu > li {
                 margin-bottom: 0;
+            }
+            
+            .navbar-menus .quittas-menu > li > a {
+                display: inline;
             }
             
             .navbar-menus .quitline {

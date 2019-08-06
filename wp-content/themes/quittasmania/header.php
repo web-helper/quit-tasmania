@@ -71,7 +71,12 @@ $container = get_theme_mod( 'understrap_container_type' );
                     
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
                         <!--<span class="navbar-toggler-icon"></span>-->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.8275 19.6536"><title>icon-hamburger</title><line class="top" x1="1.4173" y1="1.4173" x2="27.4102" y2="1.4173" style="fill:none;stroke-width:2.83464574813843px"/><line class="mid" x1="1.4173" y1="9.8268" x2="27.4102" y2="9.8268" style="fill:none;stroke-width:2.83464574813843px"/><line class="bot" x1="1.4173" y1="18.2362" x2="27.4102" y2="18.2362" style="fill:none;stroke-width:2.83464574813843px"/></svg>
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.8275 19.6536"><title>icon-hamburger</title><line class="top" x1="1.4173" y1="1.4173" x2="27.4102" y2="1.4173" style="fill:none;stroke-width:2.83464574813843px"/><line class="mid" x1="1.4173" y1="9.8268" x2="27.4102" y2="9.8268" style="fill:none;stroke-width:2.83464574813843px"/><line class="bot" x1="1.4173" y1="18.2362" x2="27.4102" y2="18.2362" style="fill:none;stroke-width:2.83464574813843px"/></svg>-->
+                        <span class="hamburger-button">
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                        </span>
                     </button>
                 </div>
                 
@@ -83,7 +88,11 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
                 
                 <div id="navbarNavDropdown" class="collapse navbar-collapse">
-                    <div class="navbar-image float-md-left"><img src="<?php echo home_url('/wp-content/themes/quittasmania/images/take-time-to-think-text.png'); ?>" alt="Take the time to think about why you smoke" /></div>
+                    <div class="navbar-image float-md-left">
+                        <div class="navbar-image-wrapper">
+                            <img src="<?php echo home_url('/wp-content/themes/quittasmania/images/take-time-to-think-text.png'); ?>" alt="Take the time to think about why you smoke" />
+                        </div>
+                    </div>
                     
                     <div class="navbar-menus float-md-left">
                         <div class="navbar-menus-inner">
