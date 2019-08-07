@@ -473,7 +473,8 @@ body {
     font-size: 1rem;
     font-family: "Akrobat", sans-serif;
     font-weight: 500;
-    color: #ffffff; }
+    color: #ffffff;
+    text-decoration: none; }
   .navbar-expand-md .navbar-collapse .navbar-menus .quittas-menu > li > a::before {
     content: "";
     position: absolute;
