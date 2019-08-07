@@ -471,6 +471,7 @@ body {
     position: relative;
     display: block;
     font-size: 1rem;
+    font-family: "Akrobat", sans-serif;
     font-weight: 500;
     color: #ffffff; }
   .navbar-expand-md .navbar-collapse .navbar-menus .quittas-menu > li > a::before {
@@ -553,11 +554,19 @@ p {
   font-family: "Raleway", sans-serif; }
 
 a {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: #2e4986; }
+
+a:hover {
+  color: #2e4986; }
+
+a.button-link {
   font-family: "Akrobat", sans-serif;
   font-weight: bold;
   color: #ec1f30; }
 
-a:hover {
+a.button-link:hover {
   color: #ec1f30;
   text-decoration: none; }
 
@@ -591,6 +600,19 @@ a:hover {
 
 .container {
   padding: 0 1.875rem; }
+
+.title-small {
+  display: block;
+  font-size: 1.5rem;
+  font-family: "Akrobat", sans-serif;
+  line-height: 1.2; }
+
+.with-underline {
+  margin-bottom: 16px; }
+
+.underline {
+  margin: 0 auto;
+  height: 5px; }
 
 /**
 * Footer
@@ -696,6 +718,9 @@ a:hover {
 @media (min-width: 768px) {
   body {
     font-size: 1rem; }
+
+  .container-inner {
+    margin: 0 50px; }
 
   .navbar {
     padding: 0.5rem 0;

@@ -602,6 +602,7 @@ body {
             position: relative;
             display: block;
             @include font-size(16px);
+            font-family: $font-family-secondary;
             font-weight: 500;
             color: $color-white;
         }
@@ -723,12 +724,22 @@ p {
 }
 
 a {
+    font-family: $font-family-primary;
+    font-weight: 400;
+    color: $color_primary;
+}
+
+a:hover {
+    color: $color_primary;
+}
+
+a.button-link {
     font-family: $font-family-secondary;
     font-weight: bold;
     color: $color_secondary;
 }
 
-a:hover {
+a.button-link:hover {
     color: $color_secondary;
     text-decoration: none;
 }
@@ -776,6 +787,26 @@ a:hover {
 
 .container {
     padding: 0 1.875rem;
+}
+
+.container-inner {
+    //margin: 0 50px;
+}
+
+.title-small {
+    display: block;
+    @include font-size(24px);
+    font-family: $font-family-secondary;
+    line-height: 1.2;
+}
+
+.with-underline {
+    margin-bottom: 16px;
+}
+
+.underline {
+  	margin: 0 auto;
+  	height: 5px;
 }
 
  /**
@@ -946,6 +977,10 @@ a:hover {
 @include media-breakpoint-up(md) {
     body {
         @include font-size(16px);
+    }
+    
+    .container-inner {
+        margin: 0 50px;
     }
     
     .navbar {
