@@ -26,7 +26,8 @@ body {
     -o-transition: all 0.25s ease-in-out 0s;
     transition: all 0.25s ease-in-out 0s;
     
-    &.collapse-active {
+    &.collapse-active,
+    &.search-collapse-active {
         padding: 0.5rem 0.9375rem 0 !important;
     }
     
@@ -126,6 +127,32 @@ body {
             @include font-size(19px);
             color: $color_primary;
         }
+        
+        .search-toggler .fa::after {
+            display: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background: url('../images/close-icon.png') center center no-repeat;
+            background-size: cover;
+        }
+        
+        .search-toggler .fa.close-button {
+            position: relative;
+            height: 22px;
+            width: 22px;
+        }
+        
+        .search-toggler .fa.close-button::before {
+            display: none;
+        }
+        
+        .search-toggler .fa.close-button::after {
+            display: block;
+        }
     }
     
     .right-controls.menu-active {
@@ -159,6 +186,8 @@ body {
     }
     
     .search-form-collapse {
+        display: none !important;
+        left: 0;
         /*position: fixed;
         top: 0;
         left: 0;
@@ -178,6 +207,10 @@ body {
             align-content: center;
             align-items: center;
             justify-content: center;
+        }
+        
+        &.show {
+            display: block !important;
         }
     }
     
@@ -490,6 +523,11 @@ body {
     }
 }*/
 
+#navbarNavDropdown {
+    display: block !important;
+    left: 100%;
+}
+
 .navbar-expand-md {
     .navbar-toggler {
         display: block;
@@ -499,6 +537,7 @@ body {
     }
     
     .navbar-collapse {
+        overflow: hidden;
         display: none !important;
         position: fixed;
         top: 0;
@@ -572,7 +611,7 @@ body {
             position: absolute;
             width: 100%;
             height: 1px;
-            bottom: -2px;
+            bottom: 0;
             left: 0;
             background-color: $color-white;
             visibility: hidden;
@@ -914,7 +953,8 @@ a:hover {
         padding: 0.5rem 0;
         max-width: 720px;
         
-        &.collapse-active {
+        &.collapse-active,
+        &.search-collapse-active {
             padding: 0.5rem 0 !important;
             
             .navbar-brand {
@@ -1038,11 +1078,13 @@ a:hover {
             }
             
             .navbar-menus .quittas-menu > li {
+                display: block;
                 margin-bottom: 0;
+                overflow: hidden;
             }
             
             .navbar-menus .quittas-menu > li > a {
-                display: inline;
+                float: left;
             }
             
             .navbar-menus .quitline {

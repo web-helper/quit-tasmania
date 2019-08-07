@@ -2,19 +2,25 @@ jQuery(document).ready(function($){
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
         if (scroll > 1){
-            //$('#header-wrapper').hide();
             $('#wrapper-navbar').addClass('sticky-header');
         } else {
             $('#wrapper-navbar').removeClass('sticky-header');
         }
     });
     
+    $('.navbar .navbar-toggler').on('click', function() {
+        if ( parseInt($('#navbarNavDropdown').css('left')) > 0 ) {
+            $('#navbarNavDropdown').animate({left: '0'}, 300, 'linear', function() {
+                $('#navbarNavDropdown .navbar-image .navbar-image-wrapper').addClass('animate');
+            });
+        } else {
+            $('#navbarNavDropdown').animate({left: '100%'}, 300, 'linear');
+        }
+    });
+    
     $('#navbarNavDropdown').on('shown.bs.collapse', function() {
         $('.navbar .right-controls').addClass('menu-active');
         $('.navbar').addClass('collapse-active');
-        var timeout = setTimeout(function() {
-            $('#navbarNavDropdown .navbar-image .navbar-image-wrapper').addClass('animate');
-        }, 100);
         
     }).on('hide.bs.collapse', function() {
         $('.navbar .right-controls').removeClass('menu-active');
@@ -24,14 +30,14 @@ jQuery(document).ready(function($){
     
     $('#search-form').on('shown.bs.collapse', function() {
         $('.navbar .right-controls').addClass('searchform-active');
-        $('.navbar .search-toggler').find('.fa').removeClass('fa-search');
-        $('.navbar .search-toggler').find('.fa').addClass('fa-times');
-        $('.navbar').addClass('collapse-active');
+        $('.navbar .search-toggler .fa').removeClass('fa-search');
+        $('.navbar .search-toggler .fa').addClass('close-button');
+        $('.navbar').addClass('search-collapse-active');
     }).on('hide.bs.collapse', function() {
         $('.navbar .right-controls').removeClass('searchform-active')
-        $('.navbar .search-toggler').find('.fa').removeClass('fa-times');
-        $('.navbar .search-toggler').find('.fa').addClass('fa-search');
-        $('.navbar').removeClass('collapse-active');
+        $('.navbar .search-toggler .fa').removeClass('close-button');
+        $('.navbar .search-toggler .fa').addClass('fa-search');
+        $('.navbar').removeClass('search-collapse-active');
     });
     
     $('.screenheight').each(function() {
