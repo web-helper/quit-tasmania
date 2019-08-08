@@ -115,6 +115,56 @@ function init_acf() {
             'icon'				=> 'admin-comments',
             'keywords'			=> array( 'section' ),
         ));
+        
+        acf_register_block(array(
+            'name'				=> 'hero-image',
+            'title'				=> __('Hero Image'),
+            'description'		=> __('Adds Hero Image to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'hero image' ),
+        ));
+        
+        acf_register_block(array(
+            'name'				=> 'text-block',
+            'title'				=> __('Text Block'),
+            'description'		=> __('Adds custom rich text to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'text block' ),
+        ));
+        
+        acf_register_block(array(
+            'name'				=> 'quittas-heading',
+            'title'				=> __('Quittas Heading'),
+            'description'		=> __('Adds heading to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'quitas heading' ),
+        ));
+        
+        acf_register_block(array(
+            'name'				=> 'quiz-section',
+            'title'				=> __('Quiz Section'),
+            'description'		=> __('Adds quiz section to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'quiz section' ),
+        ));
+        
+        acf_register_block(array(
+            'name'				=> 'article-section',
+            'title'				=> __('Article Section'),
+            'description'		=> __('Adds 2-column Text and Image pair to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'article section' ),
+        ));
     }
 }
 add_action('acf/init', 'init_acf');
@@ -144,5 +194,14 @@ function quittas_get_menu_name_by_location( $location ) {
     
     return $menu_obj->name;
 }
+
+function add_theme_css_to_editor($mce_init) {
+    $content_css = get_stylesheet_directory_uri() . '/css/theme.css';
+
+    $mce_init[ 'content_css' ] = "{$content_css}";
+    
+    return $mce_init;
+}
+add_filter( 'tiny_mce_before_init', 'add_theme_css_to_editor');
 
 ?>
