@@ -3070,9 +3070,14 @@ a.button-link:hover {
 .content-wrapper {
   width: 100%; }
 
+.featured-image {
+  margin-top: 67px;
+  text-align: center; }
+
 .featured-image img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  margin: 0 auto; }
 
 /**
  * Footer
@@ -3454,6 +3459,9 @@ a.button-link:hover {
 
   .container-inner {
     margin: 0 50px; }
+
+  .featured-image {
+    margin-top: 0; }
 
   .navbar {
     padding: 0.5rem 0;
