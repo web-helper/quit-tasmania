@@ -6,15 +6,21 @@ $title = get_field('quiz_section_title');
 $content = get_field('quiz_section_content');
 $button_text = get_field('quiz_section_button_text');
 $button_link = get_field('quiz_section_button_link');
+$bg_color = get_field('quiz_section_bg_color');
 
 $html = '';
 
-$html = '<div class="quiz-section">'."\n";
+$style = '';
+if ($bg_color) {
+    $style = ' style="background-color: '.$bg_color.'"';
+}
+
+$html = '<div class="quiz-section"'.$style.'>'."\n";
 $html .= '<div class="quiz-section-bg">'."\n";
 $html .= '<div class="quiz-section-content">'."\n";
 
 if ($title) {
-    $html .= '<h1 class="text-center blue">'.$title.'</h1>'."\n";
+    $html .= '<h1 class="quiz-section-title">'.$title.'</h1>'."\n";
 }
 
 if ($content) {
@@ -26,8 +32,8 @@ if ($content) {
 if ($button_link) {
     $button_text = empty($button_text) ? 'Start Now!' : $button_text;
     
-    $html .= '<div class="quiz-section-button text-center">'."\n";
-    $html .= '<a href="'.$button_link.'" title="'.$button_text.'">'.$button_text.'</a>'."\n";
+    $html .= '<div class="quiz-section-button">'."\n";
+    $html .= '<a href="'.$button_link.'" title="'.htmlentities($button_text).'">'.$button_text.'</a>'."\n";
     $html .= '</div>'."\n";
 }
 

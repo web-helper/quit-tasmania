@@ -12,7 +12,7 @@ $content_order_class = ($image['article_section_image_position'] == 'left') ? ''
 
 $html = '';
 
-$html = '<div class="article-section">';
+$html = '<article class="article-section">';
 
 $html .= '<div class="col col-12 col-md-6'.$image_order_class.'">'."\n";
 $html .= '<div class="article-section-image">';
@@ -37,7 +37,7 @@ if ($heading) {
     $html .= '<div class="article-section-heading-wrapper">'."\n";
     $html .= '<div class="article-section-heading float-md-left">'."\n";
     $html .= '<h1 class="with-underline">'.$heading.'</h1>'."\n";
-    $html .= '<div class="underline bg-red"></div>'."\n";
+    $html .= '<div class="underline"></div>'."\n";
     $html .= '</div>'."\n";
     $html .= '</div>'."\n";
 }
@@ -47,8 +47,10 @@ $html .= $content."\n";
 $html .= '<div class="article-section-button">'."\n";
 
 if ($read_more && $read_more['article_section_read_more_link']) {
-    $html .= '<a href="'.$read_more['article_section_read_more_link'].'" class="button-link">'."\n";
-    $html .= $read_more['article_section_read_more_text']."\n";
+    $read_more_text = empty($read_more['article_section_read_more_text']) ? 'Read More' : $read_more['article_section_read_more_text'];
+    
+    $html .= '<a href="'.$read_more['article_section_read_more_link'].'" class="button-link" title="'.htmlentities($read_more_text).'">'."\n";
+    $html .= $read_more_text."\n";
     $html .= '<span>'.quittas_circle_arrow_svg().'</span>'."\n";
     $html .= '</a>'."\n";
 }
@@ -59,7 +61,7 @@ $html .= '</div>'."\n";
 $html .= '</div>'."\n";
 $html .= '</div>'."\n";
 
-$html .= '</div>'."\n";
+$html .= '</article>'."\n";
 
 $id_html = '';
 

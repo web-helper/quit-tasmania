@@ -570,7 +570,7 @@ body {
             margin: 10px;
         }
         
-        .navbar-menus h3 {
+        /*.navbar-menus h3 {
             position: relative;
             padding-bottom: 6px;
             @include font-size(24px);
@@ -586,19 +586,58 @@ body {
             height: 2px;
             width: 150px;
             background-color: $color-white;
-        }
+        }*/
         
         .navbar-menus .quittas-menu {
             padding: 0;
-            margin: 0 0 30px 0;
+            //margin: 0 0 30px 0;
             list-style: none;
         }
         
         .navbar-menus .quittas-menu > li {
-            margin-bottom: 4px;
+            margin-top: 30px;
+        }
+        
+        .navbar-menus .quittas-menu > li:first-child {
+            margin-top: 0;
         }
         
         .navbar-menus .quittas-menu > li > a {
+            display: block;
+            position: relative;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            @include font-size(24px);
+            line-height: 1.2;
+            font-family: $font-family-secondary;
+            color: $color-white;
+            cursor: default;
+        }
+        
+        .navbar-menus .quittas-menu > li > a:hover {
+            text-decoration: none;
+        }
+        
+        .navbar-menus .quittas-menu > li > a::after {
+            position: absolute;
+            left: 0; 
+            bottom: 0;
+            content: '';
+            height: 2px;
+            width: 150px;
+            background-color: $color-white;
+        }
+        
+        .navbar-menus .sub-menu {
+            padding: 0;
+            list-style: none;
+        }
+        
+        .navbar-menus .sub-menu li {
+            margin-bottom: 4px;
+        }
+        
+        .navbar-menus .sub-menu li > a {
             position: relative;
             display: block;
             @include font-size(16px);
@@ -608,7 +647,7 @@ body {
             text-decoration: none;
         }
         
-        .navbar-menus .quittas-menu > li > a::before {
+        .navbar-menus .sub-menu li > a::before {
             content: "";
             position: absolute;
             width: 100%;
@@ -632,7 +671,7 @@ body {
             transform-origin: top left;
         }
         
-        .navbar-menus .quittas-menu > li > a:hover::before {
+        .navbar-menus .sub-menu li > a:hover::before {
             visibility: visible;
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
@@ -979,8 +1018,9 @@ a.button-link:hover {
 .hero-image .play-button > a {
     display: block;
     text-decoration: none;
+    font-family: $font_family_secondary;
     font-weight: 700;
-    color: #fff;
+    color: $color_white;
 }
 
 .hero-image .play-button > a > span {
@@ -1026,6 +1066,7 @@ a.button-link:hover {
     @include font-size(24px);
     font-family: $font-family-secondary;
     line-height: 1.2;
+    color: $color_secondary;
 }
 
 .with-underline {
@@ -1035,12 +1076,12 @@ a.button-link:hover {
 .underline {
     margin: 0 auto;
     height: 5px;
+    background-color: $color_secondary;
 }
 
 /*Quiz Section*/
 .quiz-section {
-    background-color: #e5e5e5;
-    border-bottom: 5px solid #ec1f30;
+    border-bottom: 5px solid $color_secondary;
 }
 .quiz-section .quiz-section-bg {
     overflow: hidden;
@@ -1048,6 +1089,11 @@ a.button-link:hover {
 
 .quiz-section .quiz-section-content {
     margin: 50px 15px;
+}
+
+.quiz-section .quiz-section-content .quiz-section-title {
+    text-align: center;
+    color: $color_primary;
 }
 
 .quiz-section .quiz-section-content .quiz-section-main {
@@ -1060,12 +1106,15 @@ a.button-link:hover {
 
 .quiz-section .quiz-section-content .quiz-section-button {
     margin-top: 60px;
+    text-align: center;
 }
 
 .quiz-section .quiz-section-content .quiz-section-button > a {
     position: relative;
     padding-right: 50px;
+    font-family: $font_family_secondary;
     @include font-size(28px);
+    font-weight: bold;
     color: $color_secondary;
 }
 
@@ -1172,6 +1221,45 @@ a.button-link:hover {
 
 .article-section .article-section-button > a:hover .circle-arrow .circle-arrow__circle {
     stroke-dashoffset: 0;
+}
+
+/*Call to Action*/
+.call-to-action {
+    width: 100%;
+    padding: 20px;
+    background-color: $color_primary;
+    text-align: center;
+}
+
+.call-to-action .call-to-action-inner {
+}
+
+.call-to-action .call-to-action-inner .call-to-action-link {
+    display: block;
+    text-align: center;
+    color: $color_white;
+}
+
+.call-to-action .call-to-action-inner h1 {
+    position: relative;
+    display: inline-block;
+    padding-right: 50px;
+}
+
+.call-to-action .call-to-action-inner h1::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 33px;
+    height: 33px;
+    background: url('../images/scroll-down-arrow.png') center right no-repeat;
+    background-size: auto 100%;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
 }
 
 
@@ -1336,13 +1424,13 @@ a.button-link:hover {
                 margin: 60px 40px 0 40px;
             }
             
-            .navbar-menus .quittas-menu > li {
+            .navbar-menus .sub-menu li {
                 display: block;
                 margin-bottom: 0;
                 overflow: hidden;
             }
             
-            .navbar-menus .quittas-menu > li > a {
+            .navbar-menus .sub-menu li > a {
                 float: left;
             }
             

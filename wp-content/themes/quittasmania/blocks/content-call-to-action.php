@@ -1,27 +1,24 @@
 <?php
-$id = get_field('quittas_heading_id');
-$container = get_field('quittas_heading_container_type');
-$text_wrapper = get_field('quittas_heading_wrapper');
-$top_text = get_field('quittas_heading_top_text');
-$text = get_field('quittas_heading_text');
-$underlined = get_field('quittas_heading_underlined');
+$id = get_field('call_to_action_id');
+$container = get_field('call_to_action_container_type');
+$wrapper = get_field('call_to_action_wrapper');
+$text = get_field('call_to_action_text');
+$link = get_field('call_to_action_link');
 
 $html = '';
 
-if ($top_text) {
-    $html .= '<span class="title-small">'.$top_text.'</span>'."\n";
+$html .= '<div class="call-to-action">';
+$html .= '<div class="call-to-action-inner">';
+
+if ($link) {
+    $text = empty($text) ? 'Call to Action' : $text;
+    $html .= '<a class="call-to-action-link" href="'.$link .'" title="'.htmlentities($text).'"><h1>'.$text.'</h1></a>'."\n";
 }
 
-if ($underlined) {
-    $html .= '<div class="float-md-left">'."\n";
-    $html .= '<h1 class="with-underline">'.$text.'</h1>'."\n";
-    $html .= '<div class="underline"></div>'."\n";
-    $html .= '</div>'."\n";
-} else {
-    $html .= '<h1>'.$text.'</h1>'."\n";
-}
+$html .= '</div>';
+$html .= '</div>';
 
-if ($text_wrapper) {
+if ($wrapper) {
     $w_html = '<div class="content-wrapper">'."\n";
     $w_html .= '<div class="content-wrapper-inner">'."\n";
     $w_html .= $html;

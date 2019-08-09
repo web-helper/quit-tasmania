@@ -100,88 +100,29 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <div class="container">
                                     <div class="row">
                                         <div class="col col-12 col-md-6">
-                                            <h3><?php echo quittas_get_menu_name_by_location('primary'); ?></h3>
-                                            <!-- The Main Menu goes here -->
                                             <?php wp_nav_menu(
                                                 array(
-                                                    'theme_location'  => 'primary',
+                                                    'theme_location'  => 'main-menu-left',
                                                     'container'       => 'none',
                                                     'container_class' => '',
                                                     'container_id'    => '',
                                                     'menu_class'      => 'quittas-menu',
                                                     'fallback_cb'     => '',
-                                                    'menu_id'         => 'main-menu',
-                                                    'depth'           => 0
-                                                )
-                                            ); ?>
-                                            
-                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu1'); ?></h3>
-                                            <?php wp_nav_menu(
-                                                array(
-                                                    'theme_location'  => 'extra-menu1',
-                                                    'container'       => 'none',
-                                                    'container_class' => '',
-                                                    'container_id'    => '',
-                                                    'menu_class'      => 'quittas-menu',
-                                                    'fallback_cb'     => '',
-                                                    'menu_id'         => 'extra-menu1',
-                                                    'depth'           => 0
-                                                )
-                                            ); ?>
-                                            
-                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu2'); ?></h3>
-                                            <?php wp_nav_menu(
-                                                array(
-                                                    'theme_location'  => 'extra-menu2',
-                                                    'container'       => 'none',
-                                                    'container_class' => '',
-                                                    'container_id'    => '',
-                                                    'menu_class'      => 'quittas-menu',
-                                                    'fallback_cb'     => '',
-                                                    'menu_id'         => 'extra-menu2',
+                                                    'menu_id'         => 'main-menu-left',
                                                     'depth'           => 0
                                                 )
                                             ); ?>
                                         </div>
                                         <div class="col col-12 col-md-6">
-                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu3'); ?></h3>
                                             <?php wp_nav_menu(
                                                 array(
-                                                    'theme_location'  => 'extra-menu3',
+                                                    'theme_location'  => 'main-menu-right',
                                                     'container'       => 'none',
                                                     'container_class' => '',
                                                     'container_id'    => '',
                                                     'menu_class'      => 'quittas-menu',
                                                     'fallback_cb'     => '',
-                                                    'menu_id'         => 'extra-menu3',
-                                                    'depth'           => 0
-                                                )
-                                            ); ?>
-                                            
-                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu4'); ?></h3>
-                                            <?php wp_nav_menu(
-                                                array(
-                                                    'theme_location'  => 'extra-menu4',
-                                                    'container'       => 'none',
-                                                    'container_class' => '',
-                                                    'container_id'    => '',
-                                                    'menu_class'      => 'quittas-menu',
-                                                    'fallback_cb'     => '',
-                                                    'menu_id'         => 'extra-menu4',
-                                                    'depth'           => 0
-                                                )
-                                            ); ?>
-                                            
-                                            <h3><?php echo quittas_get_menu_name_by_location('extra-menu5'); ?></h3>
-                                            <?php wp_nav_menu(
-                                                array(
-                                                    'theme_location'  => 'extra-menu5',
-                                                    'container'       => 'none',
-                                                    'container_class' => '',
-                                                    'container_id'    => '',
-                                                    'menu_class'      => 'quittas-menu',
-                                                    'fallback_cb'     => '',
-                                                    'menu_id'         => 'extra-menu5',
+                                                    'menu_id'         => 'main-menu-right',
                                                     'depth'           => 0
                                                 )
                                             ); ?>

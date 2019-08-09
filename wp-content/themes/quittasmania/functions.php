@@ -39,31 +39,21 @@ function quittas_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'quittas_enqueue_scripts' );
 
 function quittas_menu_setup() {
+    unregister_nav_menu( 'primary' );
+    
     register_nav_menus( array(
         'footer-links' => __( 'Footer Links', 'quittasmania' ),
     ) );
     
     register_nav_menus( array(
-        'extra-menu1' => __( 'Extra Menu 1', 'quittasmania' ),
+        'main-menu-right' => __( 'Right Main Menu', 'quittasmania' ),
     ) );
     
     register_nav_menus( array(
-        'extra-menu2' => __( 'Extra Menu 2', 'quittasmania' ),
-    ) );
-    
-    register_nav_menus( array(
-        'extra-menu3' => __( 'Extra Menu 3', 'quittasmania' ),
-    ) );
-    
-    register_nav_menus( array(
-        'extra-menu4' => __( 'Extra Menu 4', 'quittasmania' ),
-    ) );
-    
-    register_nav_menus( array(
-        'extra-menu5' => __( 'Extra Menu 5', 'quittasmania' ),
+        'main-menu-left' => __( 'Left Main Menu', 'quittasmania' ),
     ) );
 }
-add_action( 'after_setup_theme', 'quittas_menu_setup' );
+add_action( 'after_setup_theme', 'quittas_menu_setup', 20 );
 
 function quittas_change_logo( $html ) {
     preg_match ( '/(<a[^>]*>)(.*?)(<\/a>)/i' , $html, $matches );
@@ -164,6 +154,16 @@ function init_acf() {
             'category'			=> 'layout',
             'icon'				=> 'admin-comments',
             'keywords'			=> array( 'article section' ),
+        ));
+        
+        acf_register_block(array(
+            'name'				=> 'call-to-action',
+            'title'				=> __('Call to Action'),
+            'description'		=> __('Adds Call-to-Action box to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'call to action' ),
         ));
     }
 }
