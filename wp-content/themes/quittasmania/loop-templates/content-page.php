@@ -21,6 +21,20 @@ $show_page_title = (boolean)get_field('show_page_title');
 	</header><!-- .entry-header -->
     <?php endif; ?>
     
+    <?php 
+    $featured_image = get_the_post_thumbnail( $post->ID, 'large' ); 
+    
+    if ($featured_image) {
+    ?>
+    <section class="section">
+        <div class="section-inner">
+            <div class="featured-image"><?php echo $featured_image; ?></div>
+        </div>
+    </section>
+    <?php
+    }
+    ?>
+    
 	<div class="entry-content">
 
 		<?php the_content(); ?>

@@ -46,6 +46,28 @@ jQuery(document).ready(function($){
         $(this).css('height', win_h + 'px');
     });
     
+    $('.hero-image .play-button a').on('click', function(e) {
+        e.preventDefault();
+        
+        $(this).addClass('zoomOut');
+        
+        setTimeout(function() {
+            $('#wrapper-navbar').hide();
+            $('.hero-image .hero-image-video').css('height', '100%').dequeue();
+            $('.hero-image .hero-image-image').css('top', '100%').dequeue();
+        }, 500);
+    });
+    
+    $('.hero-image .hero-image-video-close-button').on('click', function(e) {
+        e.preventDefault();
+        
+        $('.hero-image .play-button a').removeClass('zoomOut');
+        $('.hero-image .hero-image-video').css('height', '0').dequeue();
+        $('.hero-image .hero-image-image').css('top', '0').dequeue();
+        $('#wrapper-navbar').show();
+    });
+    
+    /*Smooth Scroll*/
     $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
         // On-page links
         if (
@@ -78,4 +100,8 @@ jQuery(document).ready(function($){
         }
     });
     
+    if ( $('#wpadminbar').length > 0 ) {
+        //$('#page').css('margin-top', '32px');
+        $('#wrapper-navbar').css('top', '32px');
+    }
 });

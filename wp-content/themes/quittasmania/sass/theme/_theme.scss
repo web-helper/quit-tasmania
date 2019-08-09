@@ -840,6 +840,11 @@ a.button-link:hover {
     //margin: 0 50px;
 }
 
+.featured-image img {
+    width: 100%;
+    height: auto;
+}
+
 
 /**
  * Footer
@@ -996,15 +1001,30 @@ a.button-link:hover {
  
 /*Hero Image*/
 .hero-image {
+    overflow: hidden;
     position: relative; 
     min-height: 595px;
     max-height: 1007px;
+    background-color: $color_primary;
+}
+
+.hero-image-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
 }
 
-.hero-image .play-button {
+.hero-image .hero-image-image .play-button {
     position: absolute;
     bottom: 8%;
     left: 50%;
@@ -1015,7 +1035,7 @@ a.button-link:hover {
     transform: translate(-50%, 0);
 }
 
-.hero-image .play-button > a {
+.hero-image .hero-image-image .play-button > a {
     display: block;
     text-decoration: none;
     font-family: $font_family_secondary;
@@ -1023,7 +1043,7 @@ a.button-link:hover {
     color: $color_white;
 }
 
-.hero-image .play-button > a > span {
+.hero-image .hero-image-image .play-button > a > span {
     display: block;
     margin: 0 auto;
     margin-bottom: 5px;
@@ -1033,7 +1053,7 @@ a.button-link:hover {
     background-size: 40px auto;
 }
 
-.hero-image .scroll-down-button {
+.hero-image .hero-image-image .scroll-down-button {
     display: none;
     position: absolute;
     bottom: 5%;
@@ -1045,12 +1065,12 @@ a.button-link:hover {
     transform: translate(-50%, 0);
 }
 
-.hero-image .scroll-down-button > a {
+.hero-image .hero-image-image .scroll-down-button > a {
     display: block;
     text-decoration: none;
 }
 
-.hero-image .scroll-down-button > a > span {
+.hero-image .hero-image-image .scroll-down-button > a > span {
     display: block;
     margin: 0 auto;
     margin-bottom: 5px;
@@ -1059,6 +1079,39 @@ a.button-link:hover {
     background: url('../images/scroll-down-arrow.png') center center no-repeat;
     background-size: 35px auto;
 }
+
+.hero-image .hero-image-video {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #333;
+    z-index: 1000;
+    
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+.hero-image .hero-image-video-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    background: url('../images/close-icon.png') center center no-repeat;
+    background-size: cover;
+    z-index: 1001;
+}
+
+.hero-image .hero-image-video .hero-image-video-file {
+    height: 100%;
+    width: 100%;
+}
+
 
 /*Heading*/
 .title-small {
@@ -1487,17 +1540,17 @@ a.button-link:hover {
      */
      
     /*Hero Image*/
-    .hero-image .play-button {
+    .hero-image .hero-image-image .play-button {
         bottom: 26%;
     }
 
-    .hero-image .play-button > a > span {
+    .hero-image .hero-image-image .play-button > a > span {
         width: 50px;
         height: 50px;
         background-size: 50px auto;
     }
 
-    .hero-image .scroll-down-button {
+    .hero-image .hero-image-image .scroll-down-button {
         display: block;	
     }
     

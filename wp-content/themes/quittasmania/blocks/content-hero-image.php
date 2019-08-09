@@ -8,24 +8,40 @@ $scroll_down_button = get_field('hero_image_scroll_down_button');
 
 $html = ''; 
 
-if ($image) {
-    $html .= '<div class="screenheight hero-image" style="background-image: url(\''.$image['url'].'\');">'."\n";
-    
-    $text_image_class = $id.'-text-image';
-    if ($text_image) {
-        $html .= '<div class="'.$text_image_class.'"><img src="'.$text_image['url'].'" alt="'.$text_image['alt'].'"></div>'."\n";
-    }
-    
-    if ($video && (boolean)$video['video_enable']) {
-        $html .= '<div class="play-button"><a href="'.$video['video_link'].'" class="font-secondary" title="Play video"><span></span>PLAY VIDEO</a></div>'."\n";
-    }
-    
-    if ($scroll_down_button && (boolean)$scroll_down_button['scroll_down_button_enable'] ) {
-        $html .= '<div class="scroll-down-button"><a href="#'.$scroll_down_button['scroll_down_button_scrollto_section'].'" title="Scroll down"><span class="animate-bounce"></span></a></div>'."\n";
-    }
-    
+$html .= '<div class="screenheight hero-image">';
+
+if ($video && (boolean)$video['video_enable']) {
+    $html .= '<div class="hero-image-video">';
+    $html .= '<a href="#" class="hero-image-video-close-button"><span>&nbsp;</span></a>';
+    //$html .= '<iframe class="hero-image-video-file" src="'.$video['video_link'].'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+    $html .= '<video class="hero-image-video-file" autoplay="false" muted="" controls="true" loop="false"><source src="'.$video['video_link'].'"></video>';
     $html .= '</div>';
 }
+
+$bg_image = '';
+if ($image) {
+    $bg_image = ' style="background-image: url(\''.$image['url'].'\');"';
+}
+    
+$html .= '<div class="hero-image-image"'.$bg_image.'>'."\n";
+
+$text_image_class = $id.'-text-image';
+if ($text_image) {
+    $html .= '<div class="'.$text_image_class.'"><img src="'.$text_image['url'].'" alt="'.$text_image['alt'].'"></div>'."\n";
+}
+
+if ($video && (boolean)$video['video_enable']) {
+    $html .= '<div class="play-button"><a href="#" title="Play video"><span></span>PLAY VIDEO</a></div>'."\n";
+}
+
+if ($scroll_down_button && (boolean)$scroll_down_button['scroll_down_button_enable'] ) {
+    $html .= '<div class="scroll-down-button"><a href="#'.$scroll_down_button['scroll_down_button_scrollto_section'].'" title="Scroll down"><span class="animate-bounce"></span></a></div>'."\n";
+}
+
+$html .= '</div>';
+
+
+$html .= '</div>';
 
 $id_html = '';
 
