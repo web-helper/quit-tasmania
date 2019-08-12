@@ -9,31 +9,42 @@
 defined( 'ABSPATH' ) || exit;
 
 $show_page_title = (boolean)get_field('show_page_title');
+$show_title_after_featured_image = (boolean)get_field('show_page_title_after_featured_image');
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     
-    <?php if ($show_page_title) : ?>
+    <?php if ($show_page_title && !$show_title_after_featured_image) : ?>
     <header class="entry-header">
-
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-	</header><!-- .entry-header -->
+        <div class="container">
+            <div class="row">
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            </div>
+        </div>
+    </header><!-- .entry-header -->
     <?php endif; ?>
     
     <?php 
     $featured_image = get_the_post_thumbnail( $post->ID, 'large' ); 
     
-    if ($featured_image) {
+    if ($featured_image) :
     ?>
     <section class="section">
         <div class="section-inner">
             <div class="featured-image"><?php echo $featured_image; ?></div>
         </div>
     </section>
-    <?php
-    }
-    ?>
+    <?php endif; ?>
+    
+    <?php if ($show_page_title && $show_title_after_featured_image) : ?>
+    <header class="entry-header after-featured-image">
+        <div class="container">
+            <div class="row">
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            </div>
+        </div>
+    </header><!-- .entry-header -->
+    <?php endif; ?>
     
 	<div class="entry-content">
 

@@ -14,7 +14,7 @@ if ($video && (boolean)$video['video_enable']) {
     $html .= '<div class="hero-image-video">';
     $html .= '<a href="#" class="hero-image-video-close-button"><span>&nbsp;</span></a>';
     //$html .= '<iframe class="hero-image-video-file" src="'.$video['video_link'].'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-    $html .= '<video class="hero-image-video-file" autoplay="false" muted="" controls="true" loop="false"><source src="'.$video['video_link'].'"></video>';
+    $html .= '<video class="hero-image-video-file" controls=""><source src="'.$video['video_link'].'"></video>';
     $html .= '</div>';
 }
 

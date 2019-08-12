@@ -61,6 +61,9 @@ jQuery(document).ready(function($){
     $('.hero-image .hero-image-video-close-button').on('click', function(e) {
         e.preventDefault();
         
+        $('.hero-image .hero-image-video-file').get(0).pause();
+        $('.hero-image .hero-image-video-file').get(0).currentTime = 0;
+        
         $('.hero-image .play-button a').removeClass('zoomOut');
         $('.hero-image .hero-image-video').css('height', '0').dequeue();
         $('.hero-image .hero-image-image').css('top', '0').dequeue();
