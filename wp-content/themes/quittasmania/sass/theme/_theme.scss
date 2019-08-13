@@ -228,9 +228,10 @@ body {
         }
     }
     
+    /*
     .search-form-collapse:not(.show) {
         display: none;
-    }
+    }*/
 }
 
 .navbar-toggler {
@@ -370,12 +371,17 @@ body {
     }*/
 }
 
+#search-form {
+    display: block !important;
+    left: 100%;
+}
+
 #searchform {
     position: relative;
     min-width: 250px;
     
     .sr-only {
-        display: none;
+        //display: none;
     }
     
     .input-group {
@@ -849,6 +855,10 @@ a.button-link:hover {
     padding: 0 1.875rem;
 }
 
+body:not(.home) .content-area {
+    margin-top: 78px;
+}
+
 .content-wrapper {
     width: 100%;
 }
@@ -862,7 +872,7 @@ a.button-link:hover {
 
 .entry-header {
     overflow: hidden;
-    margin-top: 90px;
+    margin-top: 12px;
     
     &.after-featured-image {
         margin-top: 30px;
@@ -1053,7 +1063,7 @@ a.button-link:hover {
 .hero-image {
     overflow: hidden;
     position: relative; 
-    min-height: 595px;
+    min-height: 576px;
     max-height: 1007px;
     background-color: $color_primary;
 }

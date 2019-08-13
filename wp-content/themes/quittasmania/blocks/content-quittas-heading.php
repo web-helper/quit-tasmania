@@ -27,9 +27,13 @@ if ($text_wrapper) {
     $w_html .= $html;
     $w_html .= '</div>'."\n";
     $w_html .= '</div>'."\n";
-    
-    $html = $w_html;
+} else {
+    $w_html .= '<div class="heading-wrapper">'."\n";
+    $w_html .= $html;
+    $w_html .= '</div>'."\n";
 }
+
+$html = $w_html;
 
 $id_html = '';
 

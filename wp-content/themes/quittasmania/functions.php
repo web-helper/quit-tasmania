@@ -70,6 +70,8 @@ function quittas_get_search_form() {
     
     $form = str_replace( 'placeholder="Search &hellip;"', 'placeholder="What are you looking for?"', $form );
     
+    $form = str_replace( 'value="">', 'value="" autofocus>', $form );
+    
     $button = '<button type="submit" name="submit" id="searchsubmit" class="search-submit">'."\n".quittas_circle_arrow_svg()."\n".'</button>';
     $form = preg_replace('/<input class="submit[^>]*>/i', $button, $form);
     
