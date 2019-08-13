@@ -53,14 +53,6 @@ jQuery(document).ready(function($){
         $('.navbar').removeClass('search-collapse-active');
     });
     
-    $('.screenheight').each(function() {
-        var win_h = $(window).height();
-        
-        var content_area_margin = parseInt($('#primary').css('marginTop'));
-        
-        $(this).css('height', (win_h - content_area_margin) + 'px');
-    });
-    
     $('.hero-image .play-button a').on('click', function(e) {
         e.preventDefault();
         
@@ -126,4 +118,20 @@ jQuery(document).ready(function($){
         //$('#page').css('margin-top', '32px');
         $('#wrapper-navbar').css('top', '32px');
     }
+    
+    function setScreenHeight() {
+        $('.screenheight').each(function() {
+            var win_h = $(window).height();
+            
+            var content_area_margin = parseInt($('#primary').css('marginTop'));
+            
+            $(this).css('height', (win_h - content_area_margin) + 'px');
+        });
+    }
+    
+    setScreenHeight();
+    
+    $(window).on('resize', function() {
+        setScreenHeight();
+    });
 });

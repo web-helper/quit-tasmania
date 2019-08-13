@@ -2621,7 +2621,6 @@ body {
   .navbar .right-controls.searchform-active .search-toggler {
     right: 0; }
   .navbar .right-controls.searchform-active .search-toggler .fa {
-    font-size: 1.5rem;
     color: #ffffff; }
   .navbar .right-controls.searchform-active .navbar-toggler {
     display: none; }
@@ -3029,12 +3028,12 @@ body {
  * Main Content
  */
 h1 {
-  font-size: 2.625rem;
+  font-size: 2.1875rem;
   font-family: "Akrobat", sans-serif;
   font-weight: 500; }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-family: "Akrobat", sans-serif;
   font-weight: bold; }
 
@@ -3079,8 +3078,8 @@ a.button-link:hover {
 #page-wrapper {
   padding: 0;
   font-family: "Raleway", sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.7; }
+  font-size: 1rem;
+  line-height: 1.5; }
 
 .section {
   margin-left: -15px;
@@ -3134,7 +3133,7 @@ body:not(.home) .content-area {
   border-top: 2px solid #000000;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.25; }
 .footer-container a {
   color: inherit;
@@ -3321,13 +3320,13 @@ body:not(.home) .content-area {
 /*Heading*/
 .title-small {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-family: "Akrobat", sans-serif;
   line-height: 1.2;
   color: #ec1f30; }
 
 .with-underline {
-  margin-bottom: 16px; }
+  margin-bottom: 12px; }
 
 .underline {
   margin: 0 auto;
@@ -3349,20 +3348,20 @@ body:not(.home) .content-area {
   color: #2e4986; }
 
 .quiz-section .quiz-section-content .quiz-section-main {
-  margin-top: 30px; }
+  margin-top: 25px; }
 
 .quiz-section .quiz-section-content .quiz-section-main > h2 {
-  margin-bottom: 16px; }
+  margin-bottom: 14px; }
 
 .quiz-section .quiz-section-content .quiz-section-button {
-  margin-top: 60px;
+  margin-top: 30px;
   text-align: center; }
 
 .quiz-section .quiz-section-content .quiz-section-button > a {
   position: relative;
   padding-right: 50px;
   font-family: "Akrobat", sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.5625rem;
   font-weight: bold;
   color: #ec1f30; }
 
@@ -3408,7 +3407,7 @@ body:not(.home) .content-area {
 .article-section .article-section-content .article-section-small-heading {
   font-family: "Akrobat", sans-serif;
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   color: #ec1f30; }
 
 .article-section .article-section-content .article-section-heading-wrapper {
@@ -3419,11 +3418,11 @@ body:not(.home) .content-area {
 
 .article-section .article-section-content p {
   font-family: "Akrobat", sans-serif;
-  font-size: 1.5rem; }
+  font-size: 1.375rem; }
 
 .article-section .article-section-content .article-section-button {
   padding-top: 10px;
-  font-size: 1.3125rem; }
+  font-size: 1.1875rem; }
 
 .article-section .article-section-button > a span {
   display: inline-block;
@@ -3497,6 +3496,12 @@ body:not(.home) .content-area {
   body {
     font-size: 1rem; }
 
+  h1 {
+    font-size: 2.625rem; }
+
+  h2 {
+    font-size: 1.75rem; }
+
   .content-wrapper-inner {
     margin: 0 50px; }
 
@@ -3505,6 +3510,10 @@ body:not(.home) .content-area {
 
   .featured-image {
     margin-top: 0; }
+
+  #page-wrapper {
+    font-size: 1.125rem;
+    line-height: 1.7; }
 
   .navbar {
     padding: 0.5rem 0;
@@ -3607,6 +3616,8 @@ body:not(.home) .content-area {
   #wrapper-footer {
     padding-bottom: 20px; }
 
+  .footer-container.container {
+    font-size: 0.9375rem; }
   .footer-container .site-footer {
     margin-top: 0; }
   .footer-container .site-info {
@@ -3627,6 +3638,12 @@ body:not(.home) .content-area {
    * Blocks
    */
   /*Hero Image*/
+  .title-small {
+    font-size: 1.5rem; }
+
+  .with-underline {
+    margin-bottom: 16px; }
+
   .hero-image .hero-image-image .play-button {
     bottom: 26%; }
 
@@ -3646,12 +3663,30 @@ body:not(.home) .content-area {
   .quiz-section .quiz-section-content .quiz-section-main {
     margin-top: 60px; }
 
+  .quiz-section .quiz-section-content .quiz-section-main > h2 {
+    margin-bottom: 16px; }
+
+  .quiz-section .quiz-section-content .quiz-section-button {
+    margin-top: 60px; }
+
+  .quiz-section .quiz-section-content .quiz-section-button > a {
+    font-size: 1.75rem; }
+
   /*Article Content*/
   .article-section .article-section-content {
     margin-top: 0; }
 
   .article-section .article-section-content .article-section-button {
-    padding-top: 10px; } }
+    padding-top: 10px; }
+
+  .article-section .article-section-content .article-section-small-heading {
+    font-size: 1.5rem; }
+
+  .article-section .article-section-content p {
+    font-size: 1.5rem; }
+
+  .article-section .article-section-content .article-section-button {
+    font-size: 1.3125rem; } }
 @media (min-width: 992px) {
   .navbar {
     max-width: 960px; }

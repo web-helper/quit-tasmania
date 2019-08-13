@@ -190,7 +190,7 @@ body {
         }
         
         .search-toggler .fa {
-            @include font-size(24px);
+            //@include font-size(24px);
             color: $color_white;
         }
         
@@ -774,13 +774,13 @@ body {
  */
 
 h1 {
-    @include font-size(42px);
+    @include font-size(35px);
     font-family: $font-family-secondary;
     font-weight: 500;
 }
 
 h2 {
-    @include font-size(28px);
+    @include font-size(24px);
     font-family: $font-family-secondary;
     font-weight: bold;
 }
@@ -837,8 +837,8 @@ a.button-link:hover {
 #page-wrapper {
     padding: 0;
     font-family: $font-family-primary;
-    @include font-size(18px);
-    line-height: 1.7;
+    @include font-size(16px);
+    line-height: 1.5;
 }
 
 #page-wrapper .container-fluid {
@@ -920,7 +920,7 @@ body:not(.home) .content-area {
         border-top: 2px solid $color_black;
         font-family: $font-family-primary;
         font-weight: 300;
-        @include font-size(15px);
+        @include font-size(14px);
         line-height: 1.25;
     }
 
@@ -1176,14 +1176,14 @@ body:not(.home) .content-area {
 /*Heading*/
 .title-small {
     display: block;
-    @include font-size(24px);
+    @include font-size(22px);
     font-family: $font-family-secondary;
     line-height: 1.2;
     color: $color_secondary;
 }
 
 .with-underline {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .underline {
@@ -1210,15 +1210,15 @@ body:not(.home) .content-area {
 }
 
 .quiz-section .quiz-section-content .quiz-section-main {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .quiz-section .quiz-section-content .quiz-section-main > h2 {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .quiz-section .quiz-section-content .quiz-section-button {
-    margin-top: 60px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -1226,7 +1226,7 @@ body:not(.home) .content-area {
     position: relative;
     padding-right: 50px;
     font-family: $font_family_secondary;
-    @include font-size(28px);
+    @include font-size(25px);
     font-weight: bold;
     color: $color_secondary;
 }
@@ -1280,7 +1280,7 @@ body:not(.home) .content-area {
 .article-section .article-section-content .article-section-small-heading {
     font-family: $font_family_secondary;
     display: block;
-    @include font-size(24px);
+    @include font-size(22px);
     color: $color_secondary;
 }
 
@@ -1295,12 +1295,12 @@ body:not(.home) .content-area {
 
 .article-section .article-section-content p {
     font-family: $font_family_secondary;
-    @include font-size(24px);
+    @include font-size(22px);
 }
 
 .article-section .article-section-content .article-section-button {
     padding-top: 10px;
-    @include font-size(21px);
+    @include font-size(19px);
 }
 
 .article-section .article-section-button > a span {
@@ -1397,6 +1397,14 @@ body:not(.home) .content-area {
         @include font-size(16px);
     }
     
+    h1 {
+        @include font-size(42px);
+    }
+
+    h2 {
+        @include font-size(28px);
+    }
+    
     .content-wrapper {
     }
 
@@ -1410,6 +1418,11 @@ body:not(.home) .content-area {
     
     .featured-image {
         margin-top: 0;
+    }
+    
+    #page-wrapper {
+        @include font-size(18px);
+        line-height: 1.7;
     }
     
     .navbar {
@@ -1579,6 +1592,10 @@ body:not(.home) .content-area {
     }
     
     .footer-container {
+        &.container {
+            @include font-size(15px);
+        }
+        
         .site-footer {
             margin-top: 0;
         }
@@ -1613,6 +1630,16 @@ body:not(.home) .content-area {
      */
      
     /*Hero Image*/
+    
+    .title-small {
+        @include font-size(24px);
+    }
+    
+    .with-underline {
+        margin-bottom: 16px;
+    }
+
+    
     .hero-image .hero-image-image .play-button {
         bottom: 26%;
     }
@@ -1637,12 +1664,36 @@ body:not(.home) .content-area {
         margin-top: 60px;
     }
     
+    .quiz-section .quiz-section-content .quiz-section-main > h2 {
+        margin-bottom: 16px;
+    }
+    
+    .quiz-section .quiz-section-content .quiz-section-button {
+        margin-top: 60px;
+    }
+    
+    .quiz-section .quiz-section-content .quiz-section-button > a {
+        @include font-size(28px);
+    }
+    
     /*Article Content*/
     .article-section .article-section-content {
         margin-top: 0;
     }
     .article-section .article-section-content .article-section-button {
         padding-top: 10px;
+    }
+    
+    .article-section .article-section-content .article-section-small-heading {
+        @include font-size(24px);
+    }
+
+    .article-section .article-section-content p {
+        @include font-size(24px);
+    }
+
+    .article-section .article-section-content .article-section-button {
+        @include font-size(21px);
     }
 }
 
