@@ -596,6 +596,10 @@ body {
             margin: 10px;
         }
         
+        .navbar-menus .container .col:first-child {
+            margin-bottom: 13px;
+        }
+        
         /*.navbar-menus h3 {
             position: relative;
             padding-bottom: 6px;
@@ -1349,7 +1353,7 @@ body:not(.home) .content-area {
 
 .call-to-action .call-to-action-inner .call-to-action-link {
     display: block;
-    text-align: center;
+    text-align: left;
     color: $color_white;
 }
 
@@ -1387,6 +1391,10 @@ body:not(.home) .content-area {
     
     .container {
         padding: 0 0.9375rem;
+    }
+    
+    .call-to-action .call-to-action-inner .call-to-action-link {
+        text-align: center;
     }
 }
 
@@ -1561,6 +1569,10 @@ body:not(.home) .content-area {
             .navbar-menus .navbar-menus-inner {
                 height: calc(100% - 110px);
                 margin: 70px 40px 0 40px;
+            }
+            
+            .navbar-menus .container .col:first-child {
+                margin-bottom: 0;
             }
             
             .navbar-menus .sub-menu li {
