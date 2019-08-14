@@ -24,7 +24,7 @@ jQuery(document).ready(function($){
                 setTimeout(function() {
                     $('#searchform input[type="text"]').focus();
                     $('#searchform input[type="text"]').get(0).select();
-                }, 700);
+                }, 750);
             });
         } else {
             $('#search-form').animate({left: '100%'}, 300, 'linear');

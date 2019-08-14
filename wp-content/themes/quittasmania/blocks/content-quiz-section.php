@@ -33,7 +33,9 @@ if ($button_link) {
     $button_text = empty($button_text) ? 'Start Now!' : $button_text;
     
     $html .= '<div class="quiz-section-button">'."\n";
-    $html .= '<a href="'.$button_link.'" title="'.htmlentities($button_text).'">'.$button_text.'</a>'."\n";
+    $html .= '<a href="'.$button_link.'" title="'.htmlentities($button_text).'">'.$button_text."\n";
+    $html .= '<span>'.quittas_circle_arrow_svg().'</span>'."\n";
+    $html .= '</a>'."\n";
     $html .= '</div>'."\n";
 }
 
