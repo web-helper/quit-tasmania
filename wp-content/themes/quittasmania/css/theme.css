@@ -3670,14 +3670,17 @@ body:not(.home) .content-area {
     margin-bottom: 16px; }
 
   /*Hero Image*/
-  .hero-image .hero-image-image .play-button {
-    bottom: 26%; }
-  .hero-image .hero-image-image .play-button > a > span {
-    width: 50px;
-    height: 50px;
-    background-size: 50px auto; }
-  .hero-image .hero-image-image .scroll-down-button {
-    display: block; }
+  .hero-image {
+    margin-left: 0;
+    margin-right: 0; }
+    .hero-image .hero-image-image .play-button {
+      bottom: 26%; }
+    .hero-image .hero-image-image .play-button > a > span {
+      width: 50px;
+      height: 50px;
+      background-size: 50px auto; }
+    .hero-image .hero-image-image .scroll-down-button {
+      display: block; }
 
   body:not(.home) .section .hero-image {
     margin-left: -80px;
