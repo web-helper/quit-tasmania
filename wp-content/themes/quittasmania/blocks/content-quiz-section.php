@@ -65,7 +65,9 @@ if ( !empty($id) ) {
     <?php elseif ($container == 'def') : ?>
         <div class="container">
             <div class="row">
+                <div class="row-inner">
                 <?php echo $html; ?>
+                </div>
             </div>
         </div>
     <?php endif; ?>

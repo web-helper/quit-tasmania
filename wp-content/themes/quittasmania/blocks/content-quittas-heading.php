@@ -27,13 +27,9 @@ if ($text_wrapper) {
     $w_html .= $html;
     $w_html .= '</div>'."\n";
     $w_html .= '</div>'."\n";
-} else {
-    $w_html .= '<div class="heading-wrapper">'."\n";
-    $w_html .= $html;
-    $w_html .= '</div>'."\n";
+    
+    $html = $w_html;
 }
-
-$html = $w_html;
 
 $id_html = '';
 
@@ -49,7 +45,9 @@ if ( !empty($id) ) {
     <?php elseif ($container == 'def') : ?>
         <div class="container">
             <div class="row">
+                <div class="row-inner">
                 <?php echo $html; ?>
+                </div>
             </div>
         </div>
     <?php endif; ?>
