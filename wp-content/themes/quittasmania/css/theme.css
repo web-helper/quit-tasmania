@@ -2555,6 +2555,9 @@ body {
       .navbar .craving-link .warning-icon.white-version {
         display: none;
         background-image: url("../images/warning-icon-white.png"); }
+    .navbar .craving-link .warning-icon::before,
+    .navbar .craving-link .warning-icon::after {
+      display: none; }
   .navbar .craving-link-mobile {
     display: block;
     position: relative;

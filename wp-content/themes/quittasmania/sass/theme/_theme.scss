@@ -91,6 +91,11 @@ body {
                 background-image: url('../images/warning-icon-white.png');
             }
         }
+        
+        .warning-icon::before,
+        .warning-icon::after {
+            display: none;
+        }
     }
     
     .craving-link-mobile {
