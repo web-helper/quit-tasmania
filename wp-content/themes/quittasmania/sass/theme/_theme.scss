@@ -78,7 +78,7 @@ body {
         display: block;
         position: absolute;
         margin-top: -16px;
-        font-family: $font-family-secondary;
+        font-family: $font_family_secondary;
         font-weight: 600;
         line-height: 1;
         color: $color_secondary;
@@ -403,7 +403,7 @@ body {
             top: 0;
             left: 50%;
             min-width: 250px;
-            font-family: $font-family-secondary;
+            font-family: $font_family_secondary;
             text-align: center;
             color: $color_white;
             background-color: transparent;
@@ -599,7 +599,7 @@ body {
             position: relative;
             padding-bottom: 6px;
             @include font-size(24px);
-            font-family: $font-family-secondary;
+            font-family: $font_family_secondary;
             color: $color-white;
         }
         
@@ -634,7 +634,7 @@ body {
             padding-bottom: 6px;
             @include font-size(24px);
             line-height: 1.2;
-            font-family: $font-family-secondary;
+            font-family: $font_family_secondary;
             color: $color-white;
             cursor: default;
         }
@@ -668,7 +668,7 @@ body {
             display: block;
             float: left;
             @include font-size(16px);
-            font-family: $font-family-secondary;
+            font-family: $font_family_secondary;
             font-weight: 500;
             color: $color-white;
             text-decoration: none;
@@ -729,7 +729,7 @@ body {
         
         .navbar-menus .downloadables .downloadable {
             @include font-size(13px);
-            font-family: $font-family-primary;
+            font-family: $font_family_primary;
             font-weight: 700;
             color: $color-white;
             text-align: center;
@@ -767,22 +767,23 @@ body {
 
 h1 {
     @include font-size(35px);
-    font-family: $font-family-secondary;
+    font-family: $font_family_secondary;
     font-weight: 500;
 }
 
 h2 {
     @include font-size(24px);
-    font-family: $font-family-secondary;
+    font-family: $font_family_secondary;
     font-weight: bold;
+    color: $color_primary;
 }
 
 p {
-    font-family: $font-family-primary;
+    font-family: $font_family_primary;
 }
 
 a {
-    font-family: $font-family-primary;
+    font-family: $font_family_primary;
     font-weight: 400;
     color: $color_primary;
 }
@@ -792,7 +793,7 @@ a:hover {
 }
 
 a.button-link {
-    font-family: $font-family-secondary;
+    font-family: $font_family_secondary;
     font-weight: bold;
     color: $color_secondary;
 }
@@ -819,16 +820,16 @@ a.button-link:hover {
 }
 
 .font-primary {
-    font-family: $font-family-primary;
+    font-family: $font_family_primary;
 }
 
 .font-secondary {
-    font-family: $font-family-secondary;
+    font-family: $font_family_secondary;
 }
 
 #page-wrapper {
     padding: 0;
-    font-family: $font-family-primary;
+    font-family: $font_family_primary;
     @include font-size(16px);
     line-height: 1.5;
     
@@ -885,6 +886,7 @@ body:not(.home) {
         margin-top: 30px;
     }
     
+    /*
     .entry-title {
         float: left;
         position: relative;
@@ -900,6 +902,7 @@ body:not(.home) {
             background-color: $color_secondary;
         }
     }
+    */
 }
 
 .entry-content {
@@ -977,7 +980,7 @@ body:not(.home) {
     &.container {
         padding: 20px 0;
         border-top: 2px solid $color_black;
-        font-family: $font-family-primary;
+        font-family: $font_family_primary;
         font-weight: 300;
         @include font-size(12px);
         line-height: 1.25;
@@ -990,7 +993,7 @@ body:not(.home) {
 
     a {
         color: inherit;
-        font-family: $font-family-primary;
+        font-family: $font_family_primary;
         font-weight: 300;
         text-decoration: underline;
     }
@@ -1269,7 +1272,7 @@ body:not(.home) {
 .title-small {
     display: block;
     @include font-size(22px);
-    font-family: $font-family-secondary;
+    font-family: $font_family_secondary;
     line-height: 1.2;
     color: $color_secondary;
 }

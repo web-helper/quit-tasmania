@@ -17,13 +17,18 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     <?php if ($show_page_title && !$show_title_after_featured_image) : ?>
     <header class="entry-header">
         <div class="entry-header-inner">
-        <div class="container">
-            <div class="row">
-                <div class="row-inner">
-                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            <div class="container">
+                <div class="row">
+                    <div class="row-inner">
+                        <div class="content-title">
+                            <div class="float-md-left">
+                                <?php the_title( '<h1 class="entry-title with-underline">', '</h1>' ); ?>
+                                <div class="underline"></div>
+                            <div>
+                        <div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </header><!-- .entry-header -->
     <?php endif; ?>
@@ -42,13 +47,16 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     
     <?php if ($show_page_title && $show_title_after_featured_image) : ?>
     <header class="entry-header after-featured-image">
-        <div class="container">
-            <div class="row">
-                <div class="row-inner">
-                    <div class="content-wrapper">
-                        <div class="content-wrapper-inner">
-                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                        </div>
+        <div class="entry-header-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="row-inner">
+                        <div class="content-title">
+                            <div class="float-md-left">
+                                <?php the_title( '<h1 class="entry-title with-underline">', '</h1>' ); ?>
+                                <div class="underline"></div>
+                            <div>
+                        <div>
                     </div>
                 </div>
             </div>

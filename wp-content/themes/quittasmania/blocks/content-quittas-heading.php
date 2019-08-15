@@ -8,6 +8,8 @@ $underlined = get_field('quittas_heading_underlined');
 
 $html = '';
 
+$html .= '<div class="content-title">'."\n";
+
 if ($top_text) {
     $html .= '<span class="title-small">'.$top_text.'</span>'."\n";
 }
@@ -20,6 +22,8 @@ if ($underlined) {
 } else {
     $html .= '<h1>'.$text.'</h1>'."\n";
 }
+
+$html .= '</div>'."\n";
 
 if ($text_wrapper) {
     $w_html = '<div class="content-wrapper">'."\n";

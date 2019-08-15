@@ -134,4 +134,12 @@ jQuery(document).ready(function($){
     $(window).on('resize', function() {
         setScreenHeight();
     });
+    
+    
+    //Animate content titles
+    window.sr = ScrollReveal();
+    
+    sr.reveal('.content-title .title-small', { duration: 800, delay: 10, origin: 'right', distance: '80px', opacity: 0, scale: 1 });
+    sr.reveal('.content-title .with-underline', { duration: 2000, delay: 80, origin: 'right', distance: '100px', opacity: 0, scale: 1 });
+    sr.reveal('.content-title .underline', { duration: 1500, delay: 90, origin: 'left', distance: '800px', opacity: 0, scale: 1 });
 });
