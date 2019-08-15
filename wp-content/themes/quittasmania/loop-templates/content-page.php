@@ -18,7 +18,13 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     <header class="entry-header">
         <div class="container">
             <div class="row">
-                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                <div class="row-inner">
+                    <div class="content-wrapper">
+                        <div class="content-wrapper-inner">
+                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header><!-- .entry-header -->
@@ -40,7 +46,13 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     <header class="entry-header after-featured-image">
         <div class="container">
             <div class="row">
-                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                <div class="row-inner">
+                    <div class="content-wrapper">
+                        <div class="content-wrapper-inner">
+                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header><!-- .entry-header -->

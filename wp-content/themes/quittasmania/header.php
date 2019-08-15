@@ -11,6 +11,12 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
+
+$craving_link = '#';
+
+if ( get_field('craving_link', 'option') ) {
+    $craving_link = get_field('craving_link', 'option');
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -58,14 +64,18 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <div class="quitline">
                     <img class="quitline-no" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline.png' ) ); ?>" alt="Quitline" title="Quitline" />
                     <img class="quitline-no white-version" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline-white.png' ) ); ?>" alt="Quitline" title="Quitline" />
+                    <a href="tel:+137848">
+                        <img class="quitline-no" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline.png' ) ); ?>" alt="Quitline" title="Quitline" />
+                        <img class="quitline-no white-version" src="<?php echo esc_url( home_url( '/wp-content/themes/quittasmania/images/quitline-white.png' ) ); ?>" alt="Quitline" title="Quitline" />
+                    </a>
                 </div>
                 
                 <div class="craving-link-mobile">
-                    <a class="craving-link" href="#"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
+                    <a class="craving-link" href="<?php echo $craving_link; ?>"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
                 </div>
                 
                 <div class="right-controls">
-                    <a class="craving-link" href="#"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
+                    <a class="craving-link" href="<?php echo $craving_link; ?>"><i class="warning-icon"></i><i class="warning-icon white-version"></i>Craving a<br/>cigarette now?</a>
                     
                     <a class="search-toggler" href="#search-form" data-toggle="collapse" data-target="#search-form" aria-controls="search-form" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle search form', 'quittasmania' ); ?>"><i class="fa fa-search search-icon"></i></a>
                     
@@ -132,7 +142,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <div class="quitline container">
                                     <div class="row">
                                         <div class="col col-12">
-                                            <div class="quitline-no-wrapper"><a href="#" title="Quitline" class="quitline-no"><img src="<?php echo home_url('/wp-content/themes/quittasmania/images/quitline-white.png'); ?>" alt="Quitline" /></a></div>
+                                            <div class="quitline-no-wrapper"><a href="tel:+137848" title="Quitline" class="quitline-no"><img src="<?php echo home_url('/wp-content/themes/quittasmania/images/quitline-white.png'); ?>" alt="Quitline" /></a></div>
                                         </div>
                                     </div>
                                 </div>

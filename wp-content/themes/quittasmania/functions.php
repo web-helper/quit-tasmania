@@ -171,6 +171,12 @@ function init_acf() {
 }
 add_action('acf/init', 'init_acf');
 
+if( function_exists('acf_add_options_page') ) {
+  
+  acf_add_options_page();
+  
+}
+
 function quittas_acf_block_renderer( $block ) {
     $slug = str_replace('acf/', '', $block['name']);
 
