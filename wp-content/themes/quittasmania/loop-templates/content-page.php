@@ -16,16 +16,14 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     
     <?php if ($show_page_title && !$show_title_after_featured_image) : ?>
     <header class="entry-header">
+        <div class="entry-header-inner">
         <div class="container">
             <div class="row">
                 <div class="row-inner">
-                    <div class="content-wrapper">
-                        <div class="content-wrapper-inner">
                             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                        </div>
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </header><!-- .entry-header -->
     <?php endif; ?>
