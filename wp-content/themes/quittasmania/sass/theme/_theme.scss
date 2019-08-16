@@ -671,9 +671,11 @@ body {
             position: relative;
             display: block;
             float: left;
+            padding: 4px 0;
             @include font-size(16px);
             font-family: $font_family_secondary;
             font-weight: 500;
+            line-height: 1rem;
             color: $color-white;
             text-decoration: none;
         }
