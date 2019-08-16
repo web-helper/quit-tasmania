@@ -58,20 +58,16 @@ $id_html = '';
 if ( !empty($id) ) {
     $id_html = ' id="'.$id.'"';
 }
+
+$section_class = '';
+
+if ($container == 'full') {
+    $section_class = ' full-width';
+}
 ?>
 
-<section<?php echo $id_html; ?> class="section">
+<section<?php echo $id_html; ?> class="section<?php echo $section_class; ?>">
     <div class="section-inner">
-    <?php if ($container == 'full') : ?>
         <?php echo $html; ?>
-    <?php elseif ($container == 'def') : ?>
-        <div class="container">
-            <div class="row">
-                <div class="row-inner">
-                <?php echo $html; ?>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
     </div>
 </section>

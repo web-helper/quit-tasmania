@@ -93,7 +93,7 @@ if ( get_field('craving_link', 'option') ) {
                 <!-- Search form goes here -->
                 <div id="search-form" class="search-form-collapse navbar-collapse">
                     <div class="search-form-inner">
-                        <?php echo quittas_get_search_form(); ?>
+                        <?php echo quittas_get_search_form( 'nav-searchform' ); ?>
                     </div>
                 </div>
                 

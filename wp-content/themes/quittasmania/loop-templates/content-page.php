@@ -38,7 +38,7 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     
     if ($featured_image) :
     ?>
-    <section class="section">
+    <section class="section full-width">
         <div class="section-inner">
             <div class="featured-image"><?php echo $featured_image; ?></div>
         </div>
@@ -65,18 +65,22 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     <?php endif; ?>
     
 	<div class="entry-content">
+        <div class="container">
+            <div class="row">
+                <div class="row-inner">
+                    <?php the_content(); ?>
 
-		<?php the_content(); ?>
-
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
+                    <?php
+                    wp_link_pages(
+                        array(
+                            'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+                            'after'  => '</div>',
+                        )
+                    );
+                    ?>
+                </div>
+            </div>
+        </div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

@@ -385,7 +385,7 @@ body {
     left: 100%;
 }
 
-#searchform {
+#nav-searchform {
     position: relative;
     min-width: 250px;
     
@@ -452,6 +452,10 @@ body {
     }
     
     .input-group .search-submit {
+        span {
+            display: none;
+        }
+        
         .circle-arrow .circle-arrow__circle {
             stroke-dasharray: 95;
             stroke-dashoffset: 95;
@@ -827,7 +831,8 @@ a.button-link:hover {
     font-family: $font_family_secondary;
 }
 
-#page-wrapper {
+//#page-wrapper {
+.wrapper {
     padding: 0;
     font-family: $font_family_primary;
     @include font-size(16px);
@@ -839,13 +844,27 @@ a.button-link:hover {
     }
 }
 
-.section {
-    margin-left: -15px;
-    margin-right: -15px;
+.section:not(.full-width) {
+    //margin-left: -15px;
+    //margin-right: -15px;
+}
+
+.section.full-width {
+    //position: relative;
+    //width: 100vw;
+    //left: 50%;  
+    //margin-left: -50vw;
+    //margin-left: -15px;
+    //margin-right: -15px;
+    .section-inner {
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
 }
 
 .container {
-    padding: 0 1.875rem;
+    //padding: 0 1.875rem;
 }
 
 .row-inner {
@@ -857,11 +876,13 @@ body:not(.home) {
         margin-top: 67px;
     }
     
+    .content-area .page-header .page-header-inner,
     .content-area .entry-header .entry-header-inner {
         margin-left: -15px;
         margin-right: -15px;
     }
     
+    .content-area .page-content,
     .content-area .entry-content {
     }
 }
@@ -877,15 +898,56 @@ body:not(.home) {
     //margin: 0 50px;
 }
 
+.page-header {
+    overflow: hidden;
+    margin-top: 12px;
+    //margin-left: 10px;
+    //margin-right: 10px;
+    
+    .page-header-inner {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    
+    .page-title {
+        float: left;
+        position: relative;
+        padding-bottom: 21px;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            left: 0;
+            bottom: 0;
+            background-color: $color_secondary;
+        }
+    }
+    
+    .container {
+        .row-inner {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
 .entry-header {
     margin-top: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
+    //margin-left: 10px;
+    //margin-right: 10px;
     
     &.after-featured-image {
         margin-top: 30px;
     }
     
+    .container {
+        .row-inner {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
     /*
     .entry-title {
         float: left;
@@ -905,9 +967,14 @@ body:not(.home) {
     */
 }
 
+.page-content,
 .entry-content {
-    margin-left: 10px;
-    margin-right: 10px;
+    .container {
+        .row-inner {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
     
     .section {
         padding-top: 30px;
@@ -928,6 +995,66 @@ body:not(.home) {
     }
 }
 
+#search-wrapper .page-header {
+    margin-top: 30px;
+}
+
+.page-content,
+.entry-content {
+    #searchform {
+        margin-top: 30px;
+        
+        .input-group {
+            display: block;
+        }
+        
+        .input-group .field {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            font-family: $font_family_secondary;
+            background-color: transparent;
+            @include border-radius(0);
+            @include font-size(23px);
+            border: none;
+            border-bottom: 2px solid $color_black;
+        }
+        
+        .input-group .field:focus {
+            @include box-shadow(none);
+        }
+        
+        .input-group-append {
+            margin-top: 20px;
+        }
+        
+        .input-group-append .search-submit {
+            padding-left: 0;
+            border: none;
+            background-color: transparent;
+            font-family: $font_family_secondary;
+            font-weight: 600;
+            color: $color_secondary;
+        }
+        
+        .input-group-append .search-submit span {
+            display: inline-block;
+        }
+        
+        .circle-arrow {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            padding: 0;
+        }
+        
+        .circle-arrow .circle-arrow__circle {
+            stroke-dasharray: 95;
+            stroke-dashoffset: 95;
+        }
+    }
+}
+
 .featured-image {
     overflow: hidden;
     //margin-top: 67px;
@@ -939,6 +1066,12 @@ body:not(.home) {
     width: 100%;
     height: auto;
     margin: 0 auto;
+}
+
+.search-hero-image {
+    height: 150px;
+    background: $color_black url('../images/search-hero-image.jpg') center center no-repeat;
+    background-size: cover;
 }
 
 .circle-arrow {
@@ -1158,8 +1291,8 @@ body:not(.home) {
     position: relative; 
     min-height: 576px;
     max-height: 1007px;
-    margin-left: -10px;
-    margin-right: -10px;
+    //margin-left: -10px;
+    //margin-right: -10px;
     background-color: $color_primary;
     
     .hero-image-image {
@@ -1269,12 +1402,18 @@ body:not(.home) {
 
 
 /*Heading*/
-.title-small {
-    display: block;
-    @include font-size(22px);
-    font-family: $font_family_secondary;
-    line-height: 1.2;
-    color: $color_secondary;
+.content-title {
+    overflow: hidden;
+    
+    h1 span {
+        display: block;
+    }
+    
+    h1 span.title-small {
+        @include font-size(22px);
+        line-height: 1.2;
+        color: $color_secondary;
+    }
 }
 
 .with-underline {
@@ -1426,22 +1565,25 @@ body:not(.home) {
 /*Call to Action*/
 .call-to-action {
     width: 100%;
-    padding: 20px;
-    background-color: $color_primary;
+    padding: 10px;
+    //background-color: $color_primary;
     text-align: center;
     
     .call-to-action-inner {
         .call-to-action-link {
-            display: block;
-            text-align: left;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: $color_primary;
+            //text-align: center;
             color: $color_white;
         }
         
         h1 {
             position: relative;
             display: inline-block;
-            padding-right: 50px;
-            @include font-size(28px);
+            padding-right: 35px;
+            text-align: left;
+            @include font-size(22px);
         }
         
         h1::after {
@@ -1449,8 +1591,8 @@ body:not(.home) {
             position: absolute;
             top: 3px;
             right: 0;
-            width: 33px;
-            height: 33px;
+            width: 23px;
+            height: 23px;
             background: url('../images/scroll-down-arrow.png') center right no-repeat;
             background-size: auto 100%;
             -webkit-transform: rotate(-90deg);
@@ -1479,7 +1621,8 @@ body:not(.home) {
 }
 
 @media (min-width: 416px) {
-    .call-to-action .call-to-action-inner .call-to-action-link {
+    /*Call to Action*/
+    .call-to-action .call-to-action-inner .call-to-action-link h1 {
         text-align: center;
     }
 }
@@ -1493,12 +1636,23 @@ body:not(.home) {
     }
     
     .container {
-        padding: 0 0.9375rem;
+        //padding: 0 0.9375rem;
     }
     
+    .page-header,
+    .entry-header {
+        .container .row-inner {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    
+    .page-content,
     .entry-content {
-        margin-left: 0;
-        margin-right: 0;
+        .container .row-inner {
+            margin-left: 0;
+            margin-right: 0;
+        }
     }
     
     .footer-container {
@@ -1513,8 +1667,8 @@ body:not(.home) {
     
     /*Hero Image*/
     .hero-image {
-        margin-left: 0;
-        margin-right: 0;
+        //margin-left: 0;
+        //margin-right: 0;
     }
 }
 
@@ -1538,16 +1692,24 @@ body:not(.home) {
             margin-top: 78px;
         }
         
+        .content-area .page-header,
         .content-area .entry-header {
-            margin-left: 80px;
-            margin-right: 80px;
+            .container .row-inner {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
         }
         
+        .content-area .page-content,
         .content-area .entry-content {
-            margin-left: 80px;
-            margin-right: 80px;
+            .container .row-inner {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
         }
     }
+    
+    
     
     .content-wrapper {
     }
@@ -1560,12 +1722,13 @@ body:not(.home) {
         margin: 0 50px;
     }
     
+    .page-content,
     .entry-content {
         .section {
             padding-top: 60px;
         }
         
-        > h1,
+        /*> h1,
         > h2,
         > h3,
         > h4,
@@ -1575,6 +1738,27 @@ body:not(.home) {
             margin-left: -15px;
             margin-right: -15px;
         }
+        */
+    }
+    
+    
+    .page-content,
+    .entry-content {
+        #searchform {
+            margin-top: 30px;
+            
+            .input-group .field {
+                width: 400px;
+            }
+            
+            .input-group-append {
+                margin-top: 20px;
+            }
+            
+            .search-submit:hover .circle-arrow .circle-arrow__circle {
+                stroke-dashoffset: 0;
+            }
+        }
     }
     
     .featured-image {
@@ -1582,7 +1766,12 @@ body:not(.home) {
         height: 450px;
     }
     
-    #page-wrapper {
+    .search-hero-image {
+        height: 400px;
+    }
+    
+    //#page-wrapper {
+    .wrapper {
         @include font-size(18px);
         line-height: 1.7;
     }
@@ -1654,7 +1843,7 @@ body:not(.home) {
         }
     }
     
-    #searchform {
+    #nav-searchform {
         .input-group {
             .field:focus {
                 width: 600px;
@@ -1874,8 +2063,10 @@ body:not(.home) {
      
     
     /*Heading*/
-    .title-small {
-        @include font-size(24px);
+    .content-title {
+        h1 span.title-small {
+            @include font-size(24px);
+        }
     }
     
     .with-underline {
@@ -1903,8 +2094,8 @@ body:not(.home) {
     
     body:not(.home) {
         .section .hero-image {
-            margin-left: -80px;
-            margin-right: -80px;
+            //margin-left: -80px;
+            //margin-right: -80px;
         }
     }
     
@@ -1969,11 +2160,11 @@ body:not(.home) {
     .call-to-action {
         .call-to-action-inner {
             h1 {
-                @include font-size(35px);
+                @include font-size(24px);
             }
             
             h1::after {
-                top: 7px;
+                top: 4px;
             }
         }
     }

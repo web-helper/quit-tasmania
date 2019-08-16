@@ -65,14 +65,16 @@ function quittas_change_logo( $html ) {
 }
 add_filter( 'get_custom_logo', 'quittas_change_logo', 10, 1 );
 
-function quittas_get_search_form() {
+function quittas_get_search_form( $id = 'searchform' ) {
     $form = get_search_form(false);
+    
+    $form = str_replace( 'id="searchform"', 'id="'.$id.'"', $form );
     
     $form = str_replace( 'placeholder="Search &hellip;"', 'placeholder="What are you looking for?"', $form );
     
     $form = str_replace( 'value="">', 'value="" autofocus>', $form );
     
-    $button = '<button type="submit" name="submit" id="searchsubmit" class="search-submit">'."\n".quittas_circle_arrow_svg()."\n".'</button>';
+    $button = '<button type="submit" name="submit" id="searchsubmit" class="search-submit"><span>'.__( 'Search', 'quittasmania' ).'</span>'."\n".quittas_circle_arrow_svg()."\n".'</button>';
     $form = preg_replace('/<input class="submit[^>]*>/i', $button, $form);
     
     return $form;

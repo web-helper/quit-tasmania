@@ -6,21 +6,28 @@ $top_text = get_field('quittas_heading_top_text');
 $text = get_field('quittas_heading_text');
 $underlined = get_field('quittas_heading_underlined');
 
+$h1_class = $underlined ? ' class="with-underline"' : '';
+
 $html = '';
 
 $html .= '<div class="content-title">'."\n";
+
+if ($underlined) {
+    $html .= '<div class="float-md-left">'."\n";
+}
+
+$html .= '<h1'.$h1_class.'>'."\n";
 
 if ($top_text) {
     $html .= '<span class="title-small">'.$top_text.'</span>'."\n";
 }
 
+$html .= '<span>'.$text.'</span>'."\n";
+$html .= '</h1>'."\n";
+
 if ($underlined) {
-    $html .= '<div class="float-md-left">'."\n";
-    $html .= '<h1 class="with-underline">'.$text.'</h1>'."\n";
     $html .= '<div class="underline"></div>'."\n";
     $html .= '</div>'."\n";
-} else {
-    $html .= '<h1>'.$text.'</h1>'."\n";
 }
 
 $html .= '</div>'."\n";
@@ -40,20 +47,16 @@ $id_html = '';
 if ( !empty($id) ) {
     $id_html = ' id="'.$id.'"';
 }
+
+$section_class = '';
+
+if ($container == 'full') {
+    $section_class = ' full-width';
+}
 ?>
 
-<section<?php echo $id_html; ?> class="section">
+<section<?php echo $id_html; ?> class="section<?php echo $section_class; ?>">
     <div class="section-inner">
-    <?php if ($container == 'full') : ?>
         <?php echo $html; ?>
-    <?php elseif ($container == 'def') : ?>
-        <div class="container">
-            <div class="row">
-                <div class="row-inner">
-                <?php echo $html; ?>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
     </div>
 </section>
