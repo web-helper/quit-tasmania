@@ -34,13 +34,14 @@ $show_title_after_featured_image = (boolean)get_field('show_page_title_after_fea
     <?php endif; ?>
     
     <?php 
-    $featured_image = get_the_post_thumbnail( $post->ID, 'large' ); 
+    //$featured_image = get_the_post_thumbnail( $post->ID, 'large' );
+    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
     
     if ($featured_image) :
     ?>
     <section class="section full-width">
         <div class="section-inner">
-            <div class="featured-image"><?php echo $featured_image; ?></div>
+            <div class="featured-image" style="background-image: url('<?php echo $featured_image[0]; ?>');">&nbsp;</div>
         </div>
     </section>
     <?php endif; ?>

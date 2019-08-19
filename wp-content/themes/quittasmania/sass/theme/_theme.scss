@@ -1180,15 +1180,21 @@ body:not(.home) {
 .featured-image {
     overflow: hidden;
     //margin-top: 67px;
+    height: 250px;
     margin-bottom: 20px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
+/*
 .featured-image img {
     width: 100%;
     height: auto;
     margin: 0 auto;
 }
+*/
 
 .search-hero-image {
     height: 150px;
@@ -1916,6 +1922,10 @@ body:not(.home) {
     .featured-image {
         margin-bottom: 50px;
         height: 450px;
+        
+        img {
+            object-fit: cover;
+        }
     }
     
     .search-hero-image {
@@ -2028,7 +2038,7 @@ body:not(.home) {
                 overflow: hidden;
                 width: 100%;
                 height: 100%;
-                background-image: url('../images/menu-image.jpg');
+                //background-image: url('../images/menu-image.jpg');
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;

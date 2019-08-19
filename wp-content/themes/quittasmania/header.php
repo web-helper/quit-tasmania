@@ -17,6 +17,14 @@ $craving_link = '#';
 if ( get_field('craving_link', 'option') ) {
     $craving_link = get_field('craving_link', 'option');
 }
+
+$menu_image = get_field('menu_image', 'option');
+$menu_text_image = get_field('menu_text_image', 'option');
+
+$menu_bg_image = '';
+if ($menu_image) {
+    $menu_bg_image = ' style="background-image: url(\''.$menu_image.'\');"';
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -99,8 +107,10 @@ if ( get_field('craving_link', 'option') ) {
                 
                 <div id="navbarNavDropdown" class="collapse navbar-collapse">
                     <div class="navbar-image float-md-left">
-                        <div class="navbar-image-wrapper">
-                            <img src="<?php echo home_url('/wp-content/themes/quittasmania/images/take-time-to-think-text.png'); ?>" alt="Take the time to think about why you smoke" />
+                        <div class="navbar-image-wrapper"<?php echo $menu_bg_image; ?>>
+                            <?php if ($menu_text_image) : ?>
+                            <img src="<?php echo $menu_text_image; ?>" alt="Take the time to think about why you smoke" />
+                            <?php endif; ?>
                         </div>
                     </div>
                     
