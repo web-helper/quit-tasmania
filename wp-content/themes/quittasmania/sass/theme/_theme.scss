@@ -766,6 +766,117 @@ body {
     }
 }
 
+/* Quiz Page*/
+
+.quiz-page {
+    background-color: $color_white;
+    
+    .logo-container {
+        padding: 42px 0;
+        text-align: center;
+        
+        .navbar-brand {
+            display: inline-block;
+            height: 52px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar-brand img {
+            width: auto;
+            height: 100%;
+        }
+        
+        .navbar-brand img.white-version {
+            display: none;
+        }
+    }
+}
+
+body.page-template-page-quiz {
+    background-color: $color_light_gray;
+    
+    .entry-header {
+        margin-top: 0;
+        
+        .entry-title {
+            padding: 5px 0 8px;
+            margin-bottom: 1rem;
+            background-color: $color_primary;
+            color: $color_white;
+            text-align: center;
+        }
+    }
+
+    .content-area {
+        margin-top: 0 !important;
+        margin-bottom: 70px;
+        
+        .entry-content {
+        }
+        
+        .entry-content .container .row-inner {
+        }
+    }
+    
+    #wrapper-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 65px;
+        padding: 0;
+        background-color: $color_white;
+        
+        .footer-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .footer-container .illustrations {
+            display: none;
+        }
+        
+        .footer-container .illustrations > div {
+            height: 350px;
+            position: absolute;
+            top: -330px;
+            z-index: 100;
+        }
+        
+        /*
+        .footer-container .illustrations > div {
+            height: 250px;
+            top: -240px;
+        }
+        */
+        
+        .footer-container .illustrations > .man {
+            right: 30px;
+        }
+        
+        .footer-container .illustrations > .woman {
+            left: 30px;
+        }
+        
+        .footer-container .illustrations > div > img {
+            height: 100%;
+            width: auto;
+        }
+        
+        .footer-container .quitline {
+            text-align: center;
+            height: 25px;
+        }
+
+        .footer-container .quitline img {
+            height: 100%;
+            width: auto;
+            margin: 0 auto;
+        }
+    }
+}
+
 
 /**
  * Main Content
@@ -1674,6 +1785,22 @@ body:not(.home) {
     }
 }
 
+@media (min-width: 677px) {
+    body.page-template-page-quiz {
+        .content-area {
+            .entry-content .container .row-inner {
+                margin: 0 90px;
+            }
+        }
+        
+        #wrapper-footer {
+            .footer-container .illustrations {
+                display: block;
+            }
+        }
+    }
+}
+
 
 //medium - 768
 @include media-breakpoint-up(md) {
@@ -1961,6 +2088,9 @@ body:not(.home) {
         }
     }
     
+    /**
+     * Footer
+     */
     #wrapper-footer {
         padding-bottom: 20px;
     }
@@ -2055,6 +2185,36 @@ body:not(.home) {
             
             .sponsors > ul > li:nth-child(3) {
                 margin-right: 20;
+            }
+        }
+    }
+    
+    .quiz-page {
+        .logo-container {
+            padding: 48px 0;
+            text-align: center;
+            
+            .navbar-brand {
+                height: 65px;
+            }
+        }
+    }
+    
+    body.page-template-page-quiz {
+        .entry-header .entry-title {
+            padding: 11px 0 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .content-area {
+            .entry-content .container .row-inner {
+                margin: 0 180px;
+            }
+        }
+        
+        #wrapper-footer {
+            .footer-container {
+                margin: 20px 5% 0;
             }
         }
     }
@@ -2194,9 +2354,26 @@ body:not(.home) {
         margin: 80px auto;
     }
     
+    /**
+     * Footer
+     */
     .footer-container {
         .bottom-info {
             margin-top: -75px;
+        }
+    }
+    
+    body.page-template-page-quiz {
+        .content-area {
+            .entry-content .container .row-inner {
+                margin: 0 230px;
+            }
+        }
+        
+        #wrapper-footer {
+            .footer-container {
+                margin: 20px 10% 0;
+            }
         }
     }
 }
@@ -2236,6 +2413,9 @@ body:not(.home) {
         max-width: 1140px;
     }
     
+    /**
+     * Footer
+     */
     .footer-container {
         .site-info.site-info-more {
             div {
@@ -2252,6 +2432,20 @@ body:not(.home) {
             
             .sponsors {
                 width: 45%;
+            }
+        }
+    }
+    
+    body.page-template-page-quiz {
+        .content-area {
+            .entry-content .container .row-inner {
+                margin: 0 300px;
+            }
+        }
+        
+        #wrapper-footer {
+            .footer-container {
+                margin: 20px calc(10% + 15px) 0;
             }
         }
     }
