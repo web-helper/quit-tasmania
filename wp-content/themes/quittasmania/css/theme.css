@@ -3327,6 +3327,12 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
 .mb-4-5 {
   margin-bottom: 2rem; }
 
+.wp-block-table th > td,
+.wp-block-table tr > td {
+  padding: 10px; }
+.wp-block-table tr:nth-child(even) {
+  background-color: #eeeeee; }
+
 /**
  * Footer
  */

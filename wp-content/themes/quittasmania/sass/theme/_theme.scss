@@ -1226,6 +1226,20 @@ body:not(.home) {
     margin-bottom: 2rem;
 }
 
+.wp-block-table {
+    th {
+    }
+    
+    th > td,
+    tr > td {
+        padding: 10px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: $color_light_gray2;
+    }
+}
+
 
 /**
  * Footer
