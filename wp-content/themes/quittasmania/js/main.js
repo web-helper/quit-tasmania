@@ -160,4 +160,7 @@ jQuery(document).ready(function($){
     sr.reveal('.content-title span.title-small', { duration: 800, delay: 10, origin: 'right', distance: '80px', opacity: 0, scale: 1 });
     sr.reveal('.content-title span:not(.title-small)', { duration: 2000, delay: 80, origin: 'right', distance: '100px', opacity: 0, scale: 1 });
     sr.reveal('.content-title .underline', { duration: 1500, delay: 90, origin: 'left', distance: '700px', opacity: 0, scale: 1 });
+    
+    sr.reveal('.callout-text .callout-text-inner', { duration: 1000, delay: 50, origin: 'top', distance: '50px', opacity: 0, scale: 1 });
+    sr.reveal('.callout-text .callout-text-inner .underline', { duration: 1000, delay: 80, origin: 'right', distance: '500px', opacity: 0, scale: 1 });
 });

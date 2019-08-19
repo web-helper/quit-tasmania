@@ -3555,6 +3555,24 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
   height: 5px;
   background-color: #ec1f30; }
 
+/*Callout Text*/
+.callout-text {
+  text-align: center;
+  overflow: hidden; }
+  .callout-text .callout-text-inner {
+    display: inline-block;
+    max-width: 860px; }
+    .callout-text .callout-text-inner h2 {
+      font-size: 2.1875rem;
+      font-family: "Akrobat", sans-serif;
+      font-weight: 500;
+      color: #000000; }
+    .callout-text .callout-text-inner p {
+      margin-top: 5px;
+      font-family: "Akrobat", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1; }
+
 /*Quiz Section*/
 .quiz-section {
   border-bottom: 5px solid #ec1f30; }
@@ -3981,6 +3999,13 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
 
   .with-underline {
     margin-bottom: 16px; }
+
+  /*Callout Text*/
+  .callout-text .callout-text-inner h2 {
+    font-size: 2.625rem; }
+  .callout-text .callout-text-inner p {
+    font-size: 1.5rem;
+    line-height: 1.5; }
 
   /*Hero Image*/
   .hero-image .hero-image-image .play-button {

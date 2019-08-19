@@ -169,6 +169,16 @@ function init_acf() {
             'icon'				=> 'admin-comments',
             'keywords'			=> array( 'call to action' ),
         ));
+        
+        acf_register_block(array(
+            'name'				=> 'callout-text',
+            'title'				=> __('Callout Text'),
+            'description'		=> __('Adds Callout Text to your page.'),
+            'render_callback'	=> 'quittas_acf_block_renderer',
+            'category'			=> 'layout',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'callout text' ),
+        ));
     }
 }
 add_action('acf/init', 'init_acf');
