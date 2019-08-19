@@ -29,37 +29,43 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="search-hero-image">&nbsp;</div>
                     </div>
                 </section>
-
+                
 				<?php if ( have_posts() ) : ?>
+                <div class="search-results-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <header class="page-header">
 
-					<header class="page-header">
+                                        <h1 class="page-title">
+                                            <?php
+                                            printf(
+                                                /* translators: %s: query term */
+                                                esc_html__( 'Search Results for: %s', 'understrap' ),
+                                                '<span>' . get_search_query() . '</span>'
+                                            );
+                                            ?>
+                                        </h1>
 
-							<h1 class="page-title">
-								<?php
-								printf(
-									/* translators: %s: query term */
-									esc_html__( 'Search Results for: %s', 'understrap' ),
-									'<span>' . get_search_query() . '</span>'
-								);
-								?>
-							</h1>
+                                </header><!-- .page-header -->
 
-					</header><!-- .page-header -->
+                                <?php /* Start the Loop */ ?>
+                                <?php while ( have_posts() ) : the_post(); ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+                                    <?php
+                                    /**
+                                     * Run the loop for the search to output the results.
+                                     * If you want to overload this in a child theme then include a file
+                                     * called content-search.php and that will be used instead.
+                                     */
+                                    get_template_part( 'loop-templates/content', 'search' );
+                                    ?>
 
-						<?php
-						/**
-						 * Run the loop for the search to output the results.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-search.php and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', 'search' );
-						?>
-
-					<?php endwhile; ?>
-
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 				<?php else : ?>
 
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>

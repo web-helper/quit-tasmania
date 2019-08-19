@@ -3221,28 +3221,27 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
   margin-right: 10px; }
 .page-content .section,
 .entry-content .section {
-  padding-top: 30px; }
+  padding-top: 30px;
+  /*
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + p,
+  + div {
+      margin-top: 30px;
+  }
+  */ }
   .page-content .section:first-child,
   .entry-content .section:first-child {
     padding-top: 10px; }
-  .page-content .section + h1,
-  .page-content .section + h2,
-  .page-content .section + h3,
-  .page-content .section + h4,
-  .page-content .section + h5,
-  .page-content .section + p,
-  .page-content .section + div,
-  .entry-content .section + h1,
-  .entry-content .section + h2,
-  .entry-content .section + h3,
-  .entry-content .section + h4,
-  .entry-content .section + h5,
-  .entry-content .section + p,
-  .entry-content .section + div {
-    margin-top: 30px; }
 
 #search-wrapper .page-header {
   margin-top: 30px; }
+#search-wrapper .search-results-wrapper .container {
+  padding-left: 0;
+  padding-right: 0; }
 
 .page-content #searchform,
 .entry-content #searchform {
@@ -3527,7 +3526,8 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
 
 /*Heading*/
 .content-title {
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 30px; }
   .content-title h1 span {
     display: block; }
   .content-title h1 span.title-small {
@@ -3729,9 +3729,22 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
   .container-inner {
     margin: 0 50px; }
 
-  .page-content,
-  .entry-content {
-    /*> h1,
+  .page-content .section,
+  .entry-content .section {
+    padding-top: 60px;
+    /*
+    + h1:nth-child(1),
+    + h2:nth-child(1),
+    + h3:nth-child(1),
+    + h4:nth-child(1),
+    + h5:nth-child(1),
+    + p:nth-child(1),
+    + div:nth-child(1) {
+        margin-top: 60px;
+    }
+    */
+    /*
+    > h1,
     > h2,
     > h3,
     > h4,
@@ -3742,9 +3755,6 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
         margin-right: -15px;
     }
     */ }
-    .page-content .section,
-    .entry-content .section {
-      padding-top: 60px; }
 
   .page-content #searchform,
   .entry-content #searchform {
@@ -3951,8 +3961,10 @@ body:not(.home) .content-area .entry-header .entry-header-inner {
    * Blocks
    */
   /*Heading*/
-  .content-title h1 span.title-small {
-    font-size: 1.5rem; }
+  .content-title {
+    margin-bottom: 60px; }
+    .content-title h1 span.title-small {
+      font-size: 1.5rem; }
 
   .with-underline {
     margin-bottom: 16px; }
